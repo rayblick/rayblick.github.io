@@ -1,52 +1,72 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta name="home" content="landing" />
     <meta charset="utf-8" />
     <meta lang="en" />
-      <title>My title</title>
+    <title>Home</title>
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="../js/fullPage.js-master/jquery.fullPage.css" />
+
+    <!-- JavaScript-->
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/fullPage.js-master/jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+                anchors:['firstPage', 'secondPage'],
+                menu: '#myMenu',
+                navigation: true
+            });
+        });
+	</script>
   </head>
+
 
   <body>
 
-    <header>
+     <!--<div id='header'></div>-->
+     <ul id="myMenu">
+         <li data-menuanchor="firstPage" class="active">
+             <a href="#firstPage">home</a>
+         </li>
+         <li data-menuanchor="secondPage">
+             <a href="#secondPage">about</a>
+         </li>
+     </ul>
 
-      <nav>
-        <a href="home.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <div id="fullpage">
+        <div class="section" id="LandingPage" data-anchor="firstPage">
+            <a href="#"><div id="logo"></div></a>
+            <h1 id="hometitle">Research And Design In Scientific Hackery</h1>
+        </div>
 
-    </header>
+        <div class="section" data-anchor="secondPage">
+            Some section 2
+            <!--<div class="slide"> Slide 1 </div>
+            <div class="slide"> Slide 2 </div>-->
+        </div>
 
-    <!-- Start of main content -->
-    <div id="content">
+        <div class="section">
+            Some section 3
+        </div>
 
-      <div id=col1>
-
-      </div>
-
-      <div id=col2>
-
-      </div>
-
-      <div id=sidebar>
-
-      </div>
-
+        <div class="section">
+            Some section 4
+        </div>
     </div>
+    <!--<div id="main_content">
+        <h1>Main</h1>
+    </div>END main_content-->
+
+
+    <div id="footer">
+        <h3>Footer</h3>
+    </div><!--END footer-->
+
 
   </body>
-
-  <footer>
-    <div class="left_footer">
-    </div>
-    <div class="middle_footer">
-    </div>
-    <div class="right_footer">
-    </div>
-  </footer>
-
 </html>
