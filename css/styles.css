@@ -5,6 +5,20 @@
     margin:0;
 }
 
+#blog-wrapper{
+    padding: 50px;
+}
+
+
+#feature-content{
+    position: relative;
+    display: inline-flex;
+    width: 700px;
+    height: 500px;
+    background-color: #f0f0f0;
+    margin: 10px;
+}
+
 #footer{
     clear: both;
     float: left;
@@ -17,9 +31,7 @@
     display:inline-flex;
     margin: 10px 0 0 0;
     width: 100%;
-    height: 100%;
     height:150px;
-
 }
 
 #hometitle{
@@ -30,6 +42,13 @@
     padding-left: 30px;
     font-family: 'Indie Flower', cursive;
     font-size: 50px;
+}
+
+#item-list{
+    display: inline-flex;
+    width: 200px;
+    height: 500px;
+    background-color: #f0f0f0;
 }
 
 #logo{
@@ -81,6 +100,12 @@
     width:24%;
     height: 630px;
 }*/
+
+#twitterboard{
+  width: 100%!important;
+  padding-top: 60px!important;
+  text-align: center;
+}
 
 /*#wrapper{
     width: 95%;
