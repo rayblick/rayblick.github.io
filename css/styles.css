@@ -69,6 +69,21 @@
     height: 630px;
 }
 
+#menu-logo{
+    background: url('../images/radish.png') no-repeat;
+    background-size:contain;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    margin-top: 0;
+    padding: 10px;
+    padding-top: 0;
+    background-position: center center;
+    align-items: center;
+    border-style: none!important;
+    float: right;
+}
+
 #myMenu{
     display: inline-block;
     z-index: 9999;
@@ -102,9 +117,31 @@
 }*/
 
 #twitterboard{
-  width: 100%!important;
-  padding-top: 60px!important;
-  text-align: center;
+    float: left;
+    padding-left: 10%!important;
+    padding-top: 0;
+    padding-bottom: 10%;
+    padding-right: 3%;
+ }
+
+#twitter-likes{
+    float: right;
+    padding-left: 3%;
+    padding-top: 0;
+    padding-bottom: 10%;
+    padding-right: 10%!important;
+
+}
+
+#twitterboard, #twitter-likes{
+    width: 35%!important;
+    height: 70%!important;
+    text-align: center;
+}
+
+#twitterboard, #twitter-likes, h1{
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.8em;
 }
 
 /*#wrapper{
