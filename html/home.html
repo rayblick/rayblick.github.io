@@ -19,7 +19,8 @@
 			$('#fullpage').fullpage({
                 anchors:['home', 'about','twitter','blog'],
                 menu: '#myMenu',
-                navigation: true
+                navigation: false,
+                sectionsColor : ['', '#728FCE'],
             });
         });
 	</script>
@@ -34,7 +35,7 @@
              <a href="#home">home</a>
          </li>
          <li data-menuanchor="about">
-             <a href="#about">about</a>
+             <a href="#about">fun stuff</a>
          </li>
          <li data-menuanchor="twitter">
              <a href="#twitter">twitter</a>
@@ -43,7 +44,7 @@
              <a href="#blog">blog</a>
          </li>
      </ul>
-     <a href="#"><div id="menu-logo"></div></a>
+     <!--<a href="#"><div id="menu-logo"></div></a>-->
 
 
     <div id="fullpage">
@@ -53,8 +54,21 @@
         </div>
 
         <div class="section" data-anchor="about">
-            Some section 2
-
+          <div class="slide">
+            <div id="interest1">
+              <h1>fun stuff</h1>
+            </div>
+          </div>
+          <div class="slide">
+            <div id="interest2">
+              <h1>3d models</h1>
+            </div>
+          </div>
+          <div class="slide">
+            <div id="interest3">
+              <h1>Pi-mation</h1>
+            </div>
+          </div>
         </div>
 
 
