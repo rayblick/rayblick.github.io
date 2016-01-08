@@ -50,6 +50,16 @@
   height: 70%!important;
 }
 
+#interest4{
+  position: relative;
+  vertical-align: top;
+  text-align: center;
+  height: 100%!important;
+  width: 100%;
+  padding-top: 80px;
+}
+
+
 #item-list{
     display: inline-flex;
     width: 200px;
@@ -141,12 +151,13 @@
 }
 
 #twitterboard, #twitter-likes{
+    margin-top:30px;
     width: 35%!important;
     height: 70%!important;
     text-align: center;
 }
 
-#twitterboard, #twitter-likes, #interest1, #interest2, #interest3, h1{
+#twitterboard, #twitter-likes, #interest1, #interest2, #interest3, #interest4, h1{
     font-family: 'Indie Flower', cursive;
     font-size: 1.8em;
 }
