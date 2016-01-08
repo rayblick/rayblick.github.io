@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="home" content="landing" />
+    <meta charset="utf-8" />
+    <meta lang="en" />
+    <title>Home</title>
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="../js/fullPage.js-master/jquery.fullPage.css" />
+
+    <!-- JavaScript-->
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/fullPage.js-master/jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+                anchors:['home', 'about','twitter','blog'],
+                menu: '#myMenu',
+                navigation: false,
+                sectionsColor : ['', '#728FCE'],
+            });
+        });
+	</script>
+  </head>
+
+
+  <body>
+
+     <!--<div id='header'></div>-->
+     <ul id="myMenu">
+         <li data-menuanchor="home" class="active">
+             <a href="#home">home</a>
+         </li>
+         <li data-menuanchor="about">
+             <a href="#about">fun stuff</a>
+         </li>
+         <li data-menuanchor="twitter">
+             <a href="#twitter">twitter</a>
+         </li>
+         <li data-menuanchor="blog">
+             <a href="#blog">blog</a>
+         </li>
+     </ul>
+     <!--<a href="#"><div id="menu-logo"></div></a>-->
+
+
+    <div id="fullpage">
+        <div class="section" data-anchor="home">
+            <a href="#"><div id="logo"></div></a>
+            <h1 id="hometitle">Research And Design In Scientific Hackery</h1>
+        </div>
+
+        <div class="section" data-anchor="about">
+          <div class="slide">
+            <div id="interest1">
+              <h1>fun stuff</h1>
+            </div>
+          </div>
+          <div class="slide">
+            <div id="interest2">
+              <h1>3d models</h1>
+            </div>
+          </div>
+          <div class="slide">
+            <div id="interest3">
+              <h1>Pi-mation</h1>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="section" data-anchor="twitter">
+            <div class="slide">
+
+              <div id="twitterboard">
+                  <h1>tweets!</h1>
+                  <a height="95%" class="twitter-timeline" href="https://twitter.com/Ray_Blick" data-widget-id="684262183115440128">Tweets by @Ray_Blick</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              </div>
+
+              <div id="twitter-likes">
+                  <h1> likes! </h1>
+                  <a height="95%" class="twitter-timeline" href="https://twitter.com/Ray_Blick/likes" data-widget-id="684511263116767232">@Ray_Blick's Likes on Twitter</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              </div>
+
+
+
+            </div>
+            <div class="slide"> Twitter data dashboard </div>
+        </div>
+
+
+        <div class="section" data-anchor="blog">
+            <div id="blog-wrapper">
+              <div id="feature-content"></div>
+              <div id="item-list"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer">
+        <h3>Footer</h3>
+    </div><!--END footer-->
+
+
+  </body>
+</html>
