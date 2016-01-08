@@ -43,14 +43,14 @@
     font-family: 'Indie Flower', cursive;
     font-size: 50px;
 }
-#interest1, #interest2, #interest3{
+#interest1, #interest2{
   text-align: center;
   vertical-align: top;
   margin-top: 60px;
   height: 70%!important;
 }
 
-#interest4{
+#interest3, #interest4{
   position: relative;
   vertical-align: top;
   text-align: center;
