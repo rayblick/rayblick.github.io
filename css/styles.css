@@ -86,7 +86,7 @@ h2{
 }
 
 #logo{
-    background: url('images/radish.png') no-repeat;
+    background: url('img/radish.png') no-repeat;
     background-size:contain;
     width: 100%;
     height: 300px;
