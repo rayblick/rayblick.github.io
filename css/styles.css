@@ -1,5 +1,27 @@
 /* CSS - style.css */
 
+#error_tda, #error_atw, #optimize_tda, #optimize_atw{
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain;
+}
+
+#error_tda{
+    background-image: url("../img/Tda_a.png");
+}
+
+#error_atw{
+    background-image: url("../img/ATw_a.png");
+}
+
+#optimize_tda{
+    background-image: url("../img/mdd2a.png");
+}
+
+#optimize_atw{
+    background-image: url("../img/mdd1a.png");
+}
+
 .ideasheadingcontent, .subheading h1{
     text-align: center;
     font-family: 'Indie Flower', cursive;
@@ -9,11 +31,12 @@
 .ideasheadingcontent, .subheading{
     height: 50px;
 }
+
 .ve-content{
-    height: 30%;
+    height: 200px;
 }
 
-#pilot-wrapper, #lifeform-wrapper, #error-wrapper, #optimize-wrapper{
+.arrowbar, #pilot-wrapper, #lifeform-wrapper, #error-wrapper, #optimize-wrapper{
     float: left;
     text-align: center;
 }
@@ -23,17 +46,26 @@
     text-align: center;
 }
 
+.arrowbar{
+    width: 5%;
+}
+
+#arrowbar_content{
+    line-height: 200px;
+}
+
 #pilot-wrapper{
-    width: 15%;
+    width: 20%;
 }
 #lifeform-wrapper{
     width: 20%;
 }
 #error-wrapper{
-    width: 30%;
+    width: 24%;
 }
 #optimize-wrapper{
-    width: 35%;
+    position: relative;
+    width: 24%;
 }
 
 *{

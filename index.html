@@ -20,7 +20,7 @@
                 anchors:['home', 'about','twitter','blog'],
                 menu: '#myMenu',
                 navigation: false,
-                sectionsColor : ['', '#728FCE'],
+                sectionsColor : ['', ''],
             });
         });
 	</script>
@@ -73,13 +73,13 @@
                <source src="img/sharkattack3.mp4" type="video/mp4">
                   Your browser does not support the video tag.
               </video>-->
-	      <iframe src="https://video.twimg.com/ext_tw_video/686359133776293889/pu/vid/1274x720/7VUq0LZC5jOxZDK3.mp4" style="border: solid; border-color: #f0f0f0; width:80%; height: 65%;"></iframe>
+	      <!--<iframe src="https://video.twimg.com/ext_tw_video/686359133776293889/pu/vid/1274x720/7VUq0LZC5jOxZDK3.mp4" style="border: solid; border-color: #f0f0f0; width:80%; height: 65%;"></iframe>-->
             </div>
           </div>
         <div class="slide">
           <div id="interest4">
             <h1>shiny apps</h1>
-            <iframe src="https://rblick.shinyapps.io/healthapp/" style="border: solid; border-color: #f0f0f0; width:80%; height: 65%;"></iframe>
+            <!--<iframe src="https://rblick.shinyapps.io/healthapp/" style="border: solid; border-color: #f0f0f0; width:80%; height: 65%;"></iframe>-->
           </div>
         </div>
         </div>
@@ -87,7 +87,7 @@
 
         <div class="section" data-anchor="twitter">
             <div class="slide">
-
+                <!--
               <div id="twitterboard">
                   <h1>tweets!</h1>
                   <a height="95%" class="twitter-timeline" href="https://twitter.com/Ray_Blick" data-widget-id="684262183115440128">Tweets by @Ray_Blick</a>
@@ -98,7 +98,7 @@
                   <h1> i like... </h1>
                   <a height="95%" class="twitter-timeline" href="https://twitter.com/Ray_Blick/likes" data-widget-id="684511263116767232">@Ray_Blick's Likes on Twitter</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-              </div>
+              </div> -->
 
             </div>
             <!--<div class="slide"> Twitter data dashboard </div>-->
@@ -128,8 +128,17 @@
                     <div class="ve-content">
                         <p> image 2 </p>
                     </div>
-                    <div class="ve-content">
-                        <p> image 3 </p>
+                </div>
+
+                <div class="arrowbar">
+                    <div class="subheading">
+                        <h1></h1>
+                    </div>
+                    <div class="ve-content", id="arrowbar_content">
+                        <p>--></p>
+                    </div>
+                    <div class="ve-content", id="arrowbar_content">
+                        <p>--></p>
                     </div>
                 </div>
 
@@ -137,23 +146,32 @@
                     <div class="subheading">
                         <h1> error rate </h1>
                     </div>
-                    <div class="ve-content">
+                    <div class="ve-content", id="error_tda">
                     </div>
-                    <div class="ve-content">
-                    </div>
-                    <div class="ve-content">
+                    <div class="ve-content", id="error_atw">
                     </div>
 
                 </div>
+
+                <div class="arrowbar">
+                    <div class="subheading">
+                        <h1></h1>
+                    </div>
+                    <div class="ve-content", id="arrowbar_content">
+                        <p>--></p>
+                    </div>
+                    <div class="ve-content", id="arrowbar_content">
+                        <p>--></p>
+                    </div>
+                </div>
+
                 <div id="optimize-wrapper">
                     <div class="subheading">
                         <h1> optimize... </h1>
                     </div>
-                    <div class="ve-content">
+                    <div class="ve-content", id="optimize_tda">
                     </div>
-                    <div class="ve-content">
-                    </div>
-                    <div class="ve-content">
+                    <div class="ve-content", id="optimize_atw">
                     </div>
                 </div>
             </div>
