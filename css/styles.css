@@ -1,5 +1,41 @@
 /* CSS - style.css */
 
+.ideasheadingcontent, .subheading h1{
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5em;
+}
+
+.ideasheadingcontent, .subheading{
+    height: 50px;
+}
+.ve-content{
+    height: 30%;
+}
+
+#pilot-wrapper, #lifeform-wrapper, #error-wrapper, #optimize-wrapper{
+    float: left;
+    text-align: center;
+}
+
+#pilot-content{
+    vertical-align: middle;
+    text-align: center;
+}
+
+#pilot-wrapper{
+    width: 15%;
+}
+#lifeform-wrapper{
+    width: 20%;
+}
+#error-wrapper{
+    width: 30%;
+}
+#optimize-wrapper{
+    width: 35%;
+}
+
 *{
     padding:0;
     margin:0;
