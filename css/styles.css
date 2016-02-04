@@ -12,7 +12,7 @@
     padding-top: 30px;
 }
 
-#error_tda, #error_atw, #optimize_tda, #optimize_atw, #health_image{
+#error_tda, #error_atw, #optimize_tda, #optimize_atw, #health_image, #ve_image{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -37,19 +37,29 @@
 }
 
 .rightsided_content{
-    width: 30%;
+    width: 28%;
     height: 100%;
     float: right;
     text-align: center;
-    margin-right: 3%;
+    margin-right: 7%;
 }
 
+.rightsided_content p{
+    margin-top: 0em;
+    margin-bottom: 2em;
+}
 
 
 #health_image{
     background-image: url("../img/healthapp.png");
     height: 420px;
 }
+
+#ve_image{
+    background-image: url("../img/mdd1.png");
+    height: 420px;
+}
+
 
 #image_container{
     margin-top: 2%;
@@ -206,14 +216,30 @@ h2{
     background-color: #f0f0f0;
 }
 
-#logo{
-    background: url('../img/asciileaf.png') no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 500px;
+/*#logo{*/
+#myImage{
+    /*background: url('../img/asciileaf.png') no-repeat;
+    background-size: contain;*/
+    display: inline-flex;
+    width: 45%;
+    height: auto;
     margin: 5px 5px 5px 5px;
-    background-position: center center;
-    align-items: center;
+    /*background-position: center center;*/
+}
+
+#logocontainer{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin-top: 70px;
+}
+
+#subtitlecontainer{
+    margin: 0;
+    padding-top: 5%;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
 }
 
 #main_content{

@@ -24,6 +24,16 @@
             });
         });
 	</script>
+    <script>
+        function changeImage() {
+            var image = document.getElementById('myImage');
+            if (image.src.match("asciileaf")) {
+                image.src = "img/hexleaf_crop.png";
+            } else {
+                image.src = "img/asciileaf_crop.png";
+            }
+        }
+    </script>
   </head>
 
 
@@ -52,8 +62,13 @@
 
     <div id="fullpage">
         <div class="section" data-anchor="home">
-            <a href="#"><div id="logo"></div></a>
-            <h2 class="hometitle" id="hometitle_submsg"> welcome to ray blicks webpage... </h2>
+            <!--<a href="#"><div id="logo"></div></a>-->
+            <div id=logocontainer>
+                <img id="myImage" onclick="changeImage()" src="img/hexleaf_crop.png">
+                <div id=subtitlecontainer>
+                    <h2 class="hometitle" id="hometitle_submsg"> welcome to ray blicks webpage... </h2>
+                </div>
+            </div>
         </div>
 
         <div class="section" data-anchor="about">
@@ -70,7 +85,7 @@
 
         <div class="section" data-anchor="healthapp">
           <div class="title_area">
-            <h1>visualize health data using shiny apps io</h1>
+            <h1>visualising health data</h1>
           </div>
           <div class="leftsided_figure">
             <div id="image_container">
@@ -78,8 +93,22 @@
             </div>
           </div>
           <div class="rightsided_content">
-            <p>placeholder content</p>
+              <div>
+                 <h2>R shiny apps io</h2>
+                 <p>
+                     This is real data... my data.
+                 </p>
+                 <p>I have downloaded this image from the
+                     live/reactive application deployed with
+                     shiny apps io.
+                 </p>
+                 <p>
+                     <a href=http://rblick.shinyapps.io/healthapp/>
+                        go to the live shiny site
+                    </a>
+                 </p>
           </div>
+        </div>
         </div>
 
         <div class="section" data-anchor="samplinggame">
@@ -90,80 +119,37 @@
                   <div><p>place holder for image</p></div>
           </div>
           <div class="rightsided_content">
-                  <div><p>place holder for image</p></div>
+                  <div>
+                      <h2>This</h2>
+                      <p>place holder for image</p>
+                  </div>
           </div>
         </div>
 
-        <div class="section" data-anchor="virtualecology">
-            <div id="blog-wrapper">
-                <div class="ideasheadingcontent">
-                    <h1> virtual ecology </h1>
-                </div>
-                <div id="pilot-wrapper">
-                    <div class="subheading">
-                        <h1> pilot </h1>
-                    </div>
-                    <div id="pilot-content">
-                        <p> stick image </p>
-                    </div>
-                </div>
-                <div id="lifeform-wrapper">
-                    <div class="subheading">
-                        <h1> lifeforms </h1>
-                    </div>
-                    <div class="ve-content">
-                        <p> image 1 </p>
-                    </div>
-                    <div class="ve-content">
-                        <p> image 2 </p>
-                    </div>
-                </div>
-
-                <div class="arrowbar">
-                    <div class="subheading">
-                        <h1></h1>
-                    </div>
-                    <div class="ve-content", id="arrowbar_content">
-                        <p>--></p>
-                    </div>
-                    <div class="ve-content", id="arrowbar_content">
-                        <p>--></p>
-                    </div>
-                </div>
-
-                <div id="error-wrapper">
-                    <div class="subheading">
-                        <h1> error rate </h1>
-                    </div>
-                    <div class="ve-content", id="error_tda">
-                    </div>
-                    <div class="ve-content", id="error_atw">
-                    </div>
-
-                </div>
-
-                <div class="arrowbar">
-                    <div class="subheading">
-                        <h1></h1>
-                    </div>
-                    <div class="ve-content", id="arrowbar_content">
-                        <p>--></p>
-                    </div>
-                    <div class="ve-content", id="arrowbar_content">
-                        <p>--></p>
-                    </div>
-                </div>
-
-                <div id="optimize-wrapper">
-                    <div class="subheading">
-                        <h1> optimize... </h1>
-                    </div>
-                    <div class="ve-content", id="optimize_tda">
-                    </div>
-                    <div class="ve-content", id="optimize_atw">
-                    </div>
-                </div>
+        <div class="section" data-anchor="virtualecologist">
+          <div class="title_area">
+            <h1>virtual ecology</h1>
+          </div>
+          <div class="leftsided_figure">
+            <div id="image_container">
+              <div id="ve_image"></div>
             </div>
+          </div>
+          <div class="rightsided_content">
+              <div style="margin-top: 15%">
+                 <h2>Optimize ecological surveys</h2>
+
+                 <p>
+                     Simulate a second observer, reduce transect length,
+                     and calculate minimum detectable difference...
+                 </p>
+                 <p>
+                     <a href=https://github.com/rayblick/Virtual-Ecologist/>
+                        go to project homepage
+                    </a>
+                 </p>
+          </div>
+        </div>
         </div>
     </div>
 
