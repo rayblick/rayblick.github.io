@@ -13,7 +13,7 @@
     padding-top: 30px;
 }
 
-#error_tda, #error_atw, #optimize_tda, #optimize_atw, #health_image, #ve_image{
+#error_tda, #error_atw, #optimize_tda, #optimize_atw, #health_image, #ve_image, #samplinggame_image{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -61,6 +61,10 @@
     height: 550px;
 }
 
+#samplinggame_image{
+    background-image: url("../img/sampling_game.png");
+    height: 300px;
+}
 
 #image_container{
     margin-top: 2%;
