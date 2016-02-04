@@ -63,11 +63,11 @@
 
 #samplinggame_image{
     background-image: url("../img/sampling_game.png");
-    height: 300px;
+    height: 400px;
 }
 
 #image_container{
-    margin-top: 2%;
+    margin-top: 5%;
 }
 
 #error_tda{
