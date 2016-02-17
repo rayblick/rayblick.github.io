@@ -17,7 +17,7 @@
     <script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-                anchors:['home', 'healthapp','samplinggame','virtualecology'],
+                anchors:['home', 'healthapp','samplinggame','virtualecology', 'bioApp'],
                 menu: '#myMenu',
                 navigation: false,
                 sectionsColor : ['', ''],
@@ -52,6 +52,9 @@
          </li>
          <li data-menuanchor="virtualecology">
              <a href="#virtualecology">virtual ecology</a>
+         </li>
+         <li data-menuanchor="bioApp">
+             <a href="#bioApp">bio app</a>
          </li>
      </ul>
      <!--<a href="#"><div id="menu-logo"></div></a>-->
@@ -148,9 +151,35 @@
           </div>
         </div>
         </div>
+
+    <div class="section" data-anchor="bioApp">
+      <div class="title_area">
+        <h1>quick search bio videos</h1>
+      </div>
+      <div class="leftsided_figure">
+        <div id="image_container">
+          <div id="bioapp_image"></div>
+        </div>
+      </div>
+      <div class="rightsided_content">
+          <div>
+             <h2>R shiny apps io</h2>
+             <p>
+                 Quick search course related content
+             </p>
+             <p>This is a screen shot from the
+                 live/reactive application deployed with
+                 shiny apps io.
+             </p>
+             <p>
+                 <a href=http://rblick.shinyapps.io/bioApp/>
+                    go to the live shiny site
+                </a>
+             </p>
+      </div>
     </div>
-
-
+    </div>
+    </div>
     <div id="footer">
         <h3>Footer</h3>
     </div><!--END footer-->
