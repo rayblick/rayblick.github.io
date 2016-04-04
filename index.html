@@ -34,6 +34,69 @@
             }
         }
     </script>
+
+    <script>
+        // USED TO EVALUATE WIDTH AND THICKNESS MEASUREMENTS
+        // e.g. form dom_object = document.getElementById("frm1");
+        // e.g. string_id = thick ---><input id="thick" type="text"/>
+        function parse_strings(y){
+        	// if the dom object looks like 6 1/2
+        	if(y.length > 1){
+        	    var z = y[1].split('/');
+        	    var v = (parseInt(y[0]) + (parseInt(z[0]) / parseInt(z[1])));
+        		return v
+        	}
+        	else{
+        	    var z = y[0].split('/');
+        		// parsed dom_object is a fraction like 1/2
+        	    if(z.length > 1){
+        	        var v = (parseInt(z[0]) / parseInt(z[1]));
+        			return v
+        	    }
+        		// parsed dom object is just an integer like 6
+        	    else{
+        	        var v = (parseInt(y[0]));
+        			return v
+        	    }
+        	}
+        }
+
+        // PARSE LENGTH MEASUREMENTS
+        function parse_length(y){
+        	if(y.length > 1){
+        	    var v = (parseInt(y[0]) + (parseInt(y[1]) / 12));
+        		return v
+        	}
+        	else{
+        		var v = (parseInt(y[0]));
+        		return v
+        	}
+        }
+
+        function myFunction() {
+        	// get the dom form object
+          var x = document.getElementById("frm1");
+
+        	// Extract the values for each measurement
+        	// Also split each string on white space
+        	var l = x.len.value.split(" ");
+        	var w = x.wid.value.split(" ");
+        	var t = x.thick.value.split(" ");
+
+        	// parse the form input boxes
+        	var len = parse_length(l)
+        	var width = parse_strings(w)
+        	var thickness = parse_strings(t)
+
+        	// calculate volume
+        	var volume = -74.679 + -1.8222 + 6.284218 * len
+        				+ 2.877587 * width
+        				+ 4.978518 * thickness
+
+        	// return the volume to the html tag "demo"
+          document.getElementById("demo").innerHTML = volume;
+        }
+    </script>
   </head>
 
 
@@ -55,6 +118,9 @@
          </li>
          <li data-menuanchor="bioApp">
              <a href="#bioApp">bio app</a>
+         </li>
+         <li data-menuanchor="calcvol">
+             <a href="#calcvol">Calculate Surfboard volume</a>
          </li>
      </ul>
      <!--<a href="#"><div id="menu-logo"></div></a>-->
@@ -179,7 +245,66 @@
       </div>
     </div>
     </div>
+
+    <div class="section" data-anchor="calcvol">
+        <div class="title_area">
+        </div>
+        <div class="leftsided_figure">
+            <div id="image_container">
+                <div>
+                    Example entries:
+                    <ul>
+                    <li>Length <b>6 4</b></li>
+                    <li>Width <b>18 1/2</b></li>
+                    <li>Thickness <b>2 1/4</b></li>
+                    </ul>
+                    <br>
+
+                    <form id="frm1" method="post">
+                        <p>
+                            <div>
+                            <label for="id_length">Length:</label>
+                            <input id="len" type="text" maxlength="100"/>
+                            </div>
+                        </p>
+                        <p>
+                            <div>
+                            <label for="id_width">Width:</label>
+                            <input id="wid" type="text" maxlength="100"/>
+                            </div>
+                        </p>
+                        <p>
+                            <div>
+                            <label for="id_thickness">Thickness:</label>
+                            <input id="thick" type="text" maxlength="100"/>
+                            </div>
+                        </p>
+                    </form>
+
+                    <br>
+                    <br>
+
+                    </div>
+
+                    <p>Click "Calculate" to display board volume </p>
+                    <button onclick="myFunction()">Calculate</button>
+                    <p id="demo"></p>
+
+
+                    </div>
+            </div>
+            <div class="rightsided_content">
+                <div>
+                    <h2>Board volume</h2>
+                        <p>
+                            Enter length, width and height of your surfboard.
+                            Currently only set up to evaluate high performance
+                            boards.
+                        </p>
+                </div>
+            </div>
     </div>
+
     <div id="footer">
         <h3>Footer</h3>
     </div><!--END footer-->
