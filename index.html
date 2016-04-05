@@ -75,7 +75,7 @@
 
         function myFunction() {
         	// get the dom form object
-          var x = document.getElementById("frm1");
+            var x = document.getElementById("frm1");
 
         	// Extract the values for each measurement
         	// Also split each string on white space
@@ -88,8 +88,17 @@
         	var width = parse_strings(w)
         	var thickness = parse_strings(t)
 
+            if(x.boards.value == "AR"){
+                var boardtype = 0.0
+            }
+            else if (x.boards.value == "HP") {
+                var boardtype = -1.8222
+            }
+            else if (x.boards.value == "FHP") {
+                var boardtype = -1.1348
+            }
         	// calculate volume
-        	var volume = -74.679 + -1.8222 + 6.284218 * len
+        	var volume = -74.679 + boardtype + 6.284218 * len
         				+ 2.877587 * width
         				+ 4.978518 * thickness
 
@@ -262,6 +271,16 @@
 
                     <form id="frm1" method="post">
                         <p>
+                            <div>
+                                <label>Board type:</label>
+                                <!--<input id="boardtype" list="boards">-->
+                                <select id="boards">
+                                    <option value="AR">All rounder</option>
+                                    <option value="FHP">Friendly HP</option>
+                                    <option value="HP">High Performance</option>
+                                </select>
+                            </div>
+
                             <div>
                             <label for="id_length">Length:</label>
                             <input id="len" type="text" maxlength="100"/>
