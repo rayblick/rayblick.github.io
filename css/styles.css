@@ -8,10 +8,11 @@
 
 .title_area h1{
     text-align: center;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Oswald';
     font-size: 2em;
     padding-top: 30px;
 }
+    /*font-family: 'Indie Flower', cursive;*/
 
 #error_tda, #error_atw, #optimize_tda, #optimize_atw, #health_image, #ve_image, #samplinggame_image, #bioapp_image{
     background-repeat: no-repeat;
@@ -26,7 +27,7 @@
 }
 
 .leftsided_figure, .rightsided_content, .aboutslide{
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Oswald';
     font-size: 1.7em;
 }
 
@@ -98,7 +99,7 @@
 
 .ideasheadingcontent, .subheading h1{
     text-align: center;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Oswald';
     font-size: 1.5em;
 }
 
@@ -148,7 +149,7 @@
 }
 
 #health_wrapper, #interest2, #interest3, #interest4, h1{
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Oswald';
     font-size: 1.5em;
 }
 
@@ -193,13 +194,13 @@ h2{
 }
 
 #hometitle{
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Oswald';
     font-size: 40px!important;
 }
 
 #hometitle_submsg{
-  font-family: 'Indie Flower', cursive;
-  font-size: 30px!important;
+    font-family: 'Oswald';
+    font-size: 30px!important;
 }
 
 #interest1, #interest2{
@@ -278,7 +279,7 @@ h2{
 #myMenu a{
     color: #000;
     text-decoration: none;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Oswald';
     font-size: 20px;
     margin-left: 20px;
     margin-right: 20px;
