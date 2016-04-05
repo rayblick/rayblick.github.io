@@ -44,7 +44,7 @@
     float: right;
     text-align: center;
     margin-right: 7%;
-    margin-top: 5%;
+    margin-top: 1%;
 }
 
 .rightsided_content p{
@@ -283,5 +283,12 @@ h2{
     font-size: 20px;
     margin-left: 20px;
     margin-right: 20px;
+
+}
+
+#testresults{
+    border-style: solid;
+    border-color: black;
+    background-color: lightgrey;
 
 }

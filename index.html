@@ -92,15 +92,21 @@
                 var boardtype = 0.0
             }
             else if (x.boards.value == "HP") {
-                var boardtype = -1.8222
+                var boardtype = -2.155433
             }
             else if (x.boards.value == "FHP") {
-                var boardtype = -1.1348
+                var boardtype = -1.275470
+            }
+            else if (x.boards.value == "SW") {
+                var boardtype = -0.675191
+            }
+            else if (x.boards.value == "FI") {
+                var boardtype = 1.014127
             }
         	// calculate volume
-        	var volume = -74.679 + boardtype + 6.284218 * len
-        				+ 2.877587 * width
-        				+ 4.978518 * thickness
+        	var volume = -75.197048 + boardtype + 6.390996 * len
+        				+ 2.605445 * width
+        				+ 7.154882 * thickness
 
         	// return the volume to the html tag "demo"
           document.getElementById("demo").innerHTML = volume;
@@ -256,7 +262,7 @@
     </div>
 
     <div class="section" data-anchor="calcvol">
-        <div class="title_area">
+        <div class="title_area"><h1>Calculate surfboard volume</h1>
         </div>
         <div class="leftsided_figure">
             <div id="image_container">
@@ -275,9 +281,11 @@
                                 <label>Board type:</label>
                                 <!--<input id="boardtype" list="boards">-->
                                 <select id="boards">
-                                    <option value="AR">All rounder</option>
-                                    <option value="FHP">Friendly HP</option>
                                     <option value="HP">High Performance</option>
+                                    <option value="FHP">Friendly HP</option>
+                                    <option value="AR">All rounder</option>
+                                    <option value="SW">Small wave performance</option>
+                                    <option value="FI">Fish/Grovel</option>
                                 </select>
                             </div>
 
@@ -314,13 +322,36 @@
             </div>
             <div class="rightsided_content">
                 <div>
-                    <h2>Board volume</h2><br>
+                    <h2>Data</h2>
                         <p>
-                            Enter length, width and height of your surfboard.
-                            Currently only set up to evaluate high performance
-                            boards (i.e. small wave boards will not return an
-                            accurate volume).
+                            Formula created using multiple regression. Board type
+                            is coded as a dummy variable. Calculations based on 285 shapes of
+                            33 distinct boards from 7 manufacturers.
                         </p>
+                        <div id='testresults'>
+                            <h4>Tests:</h4>
+                            <p style="font-size: small">
+                                Super Fling: Superbrand (Fish)<br>
+                                5'6, 20 1/4", 2 5/8": volume = 32.90
+                                ...My estimate: 32.509 <strong>(- 0.390)</strong><br></p>
+                            <p style="font-size: small">
+                                Couch Potato: Lost (Fish)<br>
+                                5'10, 22 1/2", 2 5/8": volume = 40.8
+                                ...My estimate: 40.502 <strong>(- 0.230)</strong><br></p>
+                            <p style="font-size: small">
+                                Puffer Five: MR Surfboards (Small wave performance)<br>
+                                6'2, 21 1/4", 2 5/8": volume = 38.4
+                                ...My estimate: 37.686 <strong>(- 0.714)</strong><br></p>
+                            <p style="font-size: small">
+                                Magic Door: Rusty Surfboards (All rounder)<br>
+                                6'4, 20 1/2", 2 3/4" volume = 38.1
+                                ...My estimate: 38.367 <strong>(+ 0.267)</strong><br></p>
+                            <p style="font-size: small">
+                                DX1 JF: DHD Surfboards (High performance)<br>
+                                6'3, 19 1/2", 2 1/2" volume = 32.38
+                                ...My estimate: 31.285 <strong>(- 1.095)</strong><br></p>
+                        </div>
+
                 </div>
             </div>
     </div>
