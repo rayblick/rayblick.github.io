@@ -1,0 +1,354 @@
+/* CSS - style.css */
+
+
+.contentwrapper{
+    height: 100%;
+}
+
+header{
+    margin: 1%;
+    border-bottom: solid grey;
+    border-width: thin;
+}
+#header-logo{
+    float: left;
+    margin-left: 1%;
+
+}
+
+img#homeicon:hover{
+    opacity: 0.5;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+
+#header-container{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 1%;
+}
+
+#header-button{
+    float: right;
+    margin-left: 1%;
+
+ }
+
+#button-wrapper{
+    width: 75%;
+    vertical-align: middle;
+    float: right;
+    line-height: 60px;
+    margin-right: 1%;
+}
+
+.title_area{
+    width: 100%;
+    height: auto;
+}
+
+.title_area h1{
+    text-align: center;
+    font-family: 'Oswald';
+    padding-top: 10px;
+}
+    /*font-family: 'Indie Flower', cursive;*/
+
+#error_tda, #error_atw, #optimize_tda, #optimize_atw, #health_image, #ve_image, #samplinggame_image, #bioapp_image{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.health_wrapper{
+    height: 100%;
+    width: 100%;
+    padding-top: 70px;
+}
+
+.leftsided_figure, .rightsided_content, .aboutslide{
+    font-family: 'Oswald';
+    font-size: 1.7em;
+}
+
+.leftsided_figure{
+    width: 65%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+.leftsided_figure#boardspage{
+    width: 40%;
+    margin-left: 2%;
+}
+
+.rightsided_content{
+    width: 28%;
+    height: 90%;
+    float: right;
+    text-align: center;
+    margin-right: 7%;
+    margin-top: 1%;
+}
+
+
+.rightsided_content#boardspage{
+    width: 30%;
+    margin-right: 7%;
+}
+
+.middle_content#boardspage{
+    width: 15%;
+    float: left;
+}
+
+
+.rightsided_content p{
+    margin-top: 0em;
+    margin-bottom: 2em;
+}
+
+#bioapp_image{
+    background-image: url("../img/bioApp.png");
+    height: 550px;
+}
+
+#health_image{
+    background-image: url("../img/healthapp.png");
+    height: 550px;
+}
+
+#ve_image{
+    background-image: url("../img/transects2014.jpg");
+    height: 800px;
+}
+
+#samplinggame_image{
+    background-image: url("../img/sampling_game.png");
+    height: 450px;
+}
+
+#image_container{
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+#error_tda{
+    background-image: url("../img/Tda_a.png");
+}
+
+#error_atw{
+    background-image: url("../img/ATw_a.png");
+}
+
+#optimize_tda{
+    background-image: url("../img/mdd2a.png");
+}
+
+#optimize_atw{
+    background-image: url("../img/mdd1a.png");
+}
+
+.ideasheadingcontent{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.ideasheadingcontent, .subheading h1{
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 1.5em;
+}
+
+.ideasheadingcontent, .subheading{
+    height: 50px;
+}
+
+.ve-content{
+    height: 200px;
+}
+
+.arrowbar, #pilot-wrapper, #lifeform-wrapper, #error-wrapper, #optimize-wrapper{
+    float: left;
+    text-align: center;
+}
+
+#pilot-content{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.arrowbar{
+    width: 5%;
+}
+
+#arrowbar_content{
+    line-height: 200px;
+}
+
+#pilot-wrapper{
+    width: 20%;
+}
+#lifeform-wrapper{
+    width: 20%;
+}
+#error-wrapper{
+    width: 24%;
+}
+#optimize-wrapper{
+    position: relative;
+    width: 24%;
+}
+
+*{
+    padding:0;
+    margin:0;
+}
+
+#health_wrapper, #interest2, #interest3, #interest4, h1{
+    font-family: 'Oswald';
+    font-size: 1.5em;
+}
+
+h2{
+    font-size: 1.3em;
+    color: grey;
+}
+
+#blog-wrapper{
+    padding: 50px;
+}
+
+#feature-content{
+    position: relative;
+    display: inline-flex;
+    width: 700px;
+    height: 500px;
+    background-color: #f0f0f0;
+    margin: 10px;
+}
+
+#footer{
+    clear: both;
+    float: left;
+    background: #ddd;
+    width: 100%;
+    height: 100px;
+}
+
+#header{
+    display:inline-flex;
+    margin: 10px 0 0 0;
+    width: 100%;
+    height:150px;
+}
+
+.hometitle{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+#hometitle{
+    font-family: 'Oswald';
+    font-size: 40px!important;
+}
+
+#hometitle_submsg{
+    font-family: 'Oswald';
+    font-size: 30px!important;
+}
+
+#interest1, #interest2{
+  text-align: center;
+  vertical-align: top;
+  margin-top: 30px;
+  height: 70%!important;
+}
+
+#interest3, #interest4{
+  position: relative;
+  vertical-align: top;
+  text-align: center;
+  height: 100%!important;
+  width: 100%;
+  padding-top: 80px;
+}
+
+
+#item-list{
+    display: inline-flex;
+    width: 200px;
+    height: 500px;
+    background-color: #f0f0f0;
+}
+
+/*#logo{*/
+#myImage{
+    /*background: url('../img/asciileaf.png') no-repeat;
+    background-size: contain;*/
+    display: inline-flex;
+    width: 45%;
+    height: auto;
+    margin: 5px 5px 5px 5px;
+    /*background-position: center center;*/
+}
+
+#logocontainer{
+    text-align: center;
+    align-content: center;
+    margin-top: 90px;
+}
+
+#subtitlecontainer{
+    margin: 0;
+    padding-top: 5%;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+}
+
+#main_content{
+    float:left;
+    background: #f0f0f0;
+    margin: 10px 5px 10px 0;
+    width: 100%;
+    height: 630px;
+}
+
+
+#myMenu{
+    display: inline-block;
+    z-index: 9999;
+    position: fixed;
+}
+
+#myMenu li{
+    float: left;
+    display: inline;
+    margin: 10px;
+    padding: 10px;
+    border: solid;
+    border-radius: 10px;
+}
+
+#myMenu a{
+    color: #000;
+    text-decoration: none;
+    font-family: 'Oswald';
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+#testresults{
+    border-style: solid;
+    border-color: black;
+    background-color: lightgrey;
+
+}
