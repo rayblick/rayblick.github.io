@@ -69,8 +69,8 @@
 
             // parse the form input boxes
             var len = parse_length(l)
-            var width = parse_strings(w)
-            var thickness = parse_strings(t)
+            var wid = parse_strings(w)
+            var thick = parse_strings(t)
 
             if(x.boards.value == "AR"){
                 var boardtype = 0.0
@@ -94,11 +94,16 @@
             }
             // calculate volume
             var volume = -75.197048 + boardtype + 6.390996 * len
-                        + 2.605445 * width
-                        + 7.154882 * thickness
+                        + 2.605445 * wid
+                        + 7.154882 * thick
 
             // return the volume to the html tag "demo"
-          document.getElementById("demo").innerHTML = volume;
+            if(x.len.value != "" && x.wid.value != "" && x.thick.value != ""){
+                document.getElementById("demo").innerHTML = volume;
+            }
+            else{
+                document.getElementById("demo").innerHTML = "";
+            }
         }
     </script>
 </head>
