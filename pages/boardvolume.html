@@ -235,6 +235,16 @@
                             is coded as a dummy variable. Calculations based on 285 shapes of
                             33 distinct boards from 7 manufacturers.
                         </p>
+                        <!-- Trigger the modal with a button -->
+                        <div id="board_data_buttons1">
+                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Dissimilarity between boards</button>
+                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Dissimilarity in board type</button>
+                        </div>
+                        <div id="board_data_buttons2">
+                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Distribution of board measurements</button>
+                            <a href='../data/board_data' download='data.csv'><button style="width: 220px" type="button" class="btn btn-primary">Download Board Data</button></a>
+                        </div>
+
                         <div id='testresults'>
                             <h4>Tests:</h4>
                             <p style="font-size: 15px">
@@ -260,9 +270,7 @@
                         </div>
                 </div><br>
 
-                <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Distribution of data</button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Board type dissimilarity</button>
+
 
                 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
