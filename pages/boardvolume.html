@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="calculate board volume" content="boardvolume" />
+  <head>>
     <meta charset="utf-8" />
     <meta lang="en" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ray Blick</title>
-
-    <!--Stylesheets-->
-    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />-->
-
-    <link rel="stylesheet" type="text/css" href="../css/styles_edited.css" />
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title>VOL</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
     <link href='https://fonts.googleapis.com/css?family=Ubuntu|Oswald' rel='stylesheet' type='text/css'>
-
-    <!-- JavaScript-->
+    <link rel="stylesheet" href="../css/prism.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    <!-- <script src="js/jquery-1.11.3.min.js"></script>-->
+    <script>
+        function changeImage() {
+            var image = document.getElementById('myImage');
+            if (image.src.match("asciileaf")) {
+                image.src = "../img/hexleaf_crop.png";
+            } else {
+                image.src = "../img/asciileaf_crop.png";
+            }
+        }
+    </script>
     <script>
         // USED TO EVALUATE WIDTH AND THICKNESS MEASUREMENTS
         // e.g. form dom_object = document.getElementById("frm1");
@@ -123,192 +124,166 @@
             }
         }
     </script>
-</head>
-<body>
-    <header>
-        <div id='header-container'>
-            <div id='header-logo'>
-                <a href='../index.html'>
-                    <img id="homeicon" src="../img/Home-icon.png" alt="Home" style="width:60px;height:60px;border:0">
-                </a>
-            </div>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='main-wrapper'>
+                <div class="sidebar">
+                    <div class="sidebar-logo">
+                        <img id="myImage" onclick="changeImage()" src="../img/hexleaf_crop.png">
+                    </div>
+                    <div class="sidebar-title">
+                        Ray Blick
+                    </div>
+                    <hr class='sectionbreak'>
+                    <div class="sidebar-documentation">
+                        <strong>Projects</strong>
+                        <br>
+                        <div class="sidebar-list-indent">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="healthapp.html">Health App</a></li>
+                            <li><a href="bioapp.html">Bio Video App</a></li>
+                            <li><a href="samplinggame.html">Sampling Game</a></li>
+                            <li><a href="boardvolume.html">Surfboard Volume</a></li>
+                            <li><a href="surfmaps.html">Surf maps</a></li>
+                            <li><a href="virtualecologist.html">Virtual Ecologist</a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class='title-container'>
+                    <h1>Calculate surfboard volume</h1>
+                </div>
+                <div class='maincontent-wrapper'>
+                    <hr class='sectionbreak'>
+                    <div class="documentation-wrapper">
+                        <div class="documentation-container">
+                            <div class="documentation-content">
+                                <h4>Surfboard volume</h4>
+                                <br>
+                                <div class="documentation-content-left-50">
+                                    <form id="frm1" method="post">
+                                        <p>
+                                            <div>
+                                                <label>Board type:</label>
+                                                <!--<input id="boardtype" list="boards">-->
+                                                <select id="boards" onchange="myFunction()">
+                                                    <option value="HP">High Performance (HP)</option>
+                                                    <option value="FHP">Friendly High Performance (FH)</option>
+                                                    <option value="AR">All rounder (AR)</option>
+                                                    <option value="SW">Small wave performance (SW)</option>
+                                                    <option value="FI">Fish/Grovel (FI)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label for="id_length">Length:</label>
+                                                <input id="len" type="text" maxlength="100"/>
+                                            </div>
+                                        </p>
+                                        <p>
+                                            <div>
+                                            <label for="id_width">Width:</label>
+                                            <input id="wid" type="text" maxlength="100"/>
+                                            </div>
+                                        </p>
+                                        <p>
+                                            <div>
+                                            <label for="id_thickness">Thickness:</label>
+                                            <input id="thick" type="text" maxlength="100"/>
+                                            </div>
+                                        </p>
+                                    </form>
 
-            <div id='button-wrapper'>
+                                    <p>Click "Calculate" to display board volume </p>
+                                    <button onclick="myFunction()">Calculate</button>
+                                    <p id="demo"></p>
+                                    <h4 id="last_calc" style="color: #3366CC"></h4>
+                                    <p id="myLastCalculation" style="color: #3366CC"></p>
+                                </div>
 
-                <div id='header-button'>
-                    <a href='healthapp.html'
-                    class="btn btn-primary">Health App</a>
-                </div>
-                <div id='header-button'>
-                    <a href='bioapp.html'
-                    class="btn btn-primary">Bio App</a>
-                </div>
-                <div id='header-button'>
-                    <a href='samplinggame.html'
-                    class="btn btn-primary">Sampling game</a>
-                </div>
-                <div id='header-button'>
-                    <a href='boardvolume.html'
-                    class="btn btn-primary">Calculate surfboard volume</a>
-                </div>
-                <div id='header-button'>
-                    <a href='virtualecologist.html'
-                    class="btn btn-primary">Virtual ecology</a>
+                                <div class="documentation-content-right-50">
+                                    <img id="surfboardImage" src="../img/Highperformance.png" style="height:300px;">
+                                </div>
+                            </div>
+                                <hr class='sectionbreak'>
+
+                                <div class="documentation-content">
+                                    <h4>Tests:</h4>
+                                        <p>
+                                            Formula created using multiple regression. Board type
+                                            is coded as a dummy variable. Calculations based on 285 shapes of
+                                            33 distinct boards from 7 manufacturers.
+                                        </p>
+                                        <!-- Trigger the modal with a button -->
+                                        <div id="board_data_buttons1">
+                                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Dissimilarity between boards</button>
+                                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Dissimilarity in board type</button>
+                                        </div>
+                                        <div id="board_data_buttons2">
+                                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Distribution of board measurements</button>
+                                            <a href='../data/board_data' download='data.csv'><button style="width: 220px" type="button" class="btn btn-primary">Download Board Data</button></a>
+                                        </div>
+
+                                        <div class='boardvolume-testresults'>
+                                            <h4>Tests:</h4>
+                                            <p style="font-size: 15px">
+                                                Super Fling: Superbrand (Fish)
+                                                5'6, 20 1/4", 2 5/8": volume = 32.90
+                                                ...My estimate: 32.509 <strong>(- 0.390)</strong><br></p>
+                                            <p style="font-size: 15px">
+                                                Couch Potato: Lost (Fish)
+                                                5'10, 22 1/2", 2 5/8": volume = 40.8
+                                                ...My estimate: 40.502 <strong>(- 0.230)</strong><br></p>
+                                            <p style="font-size: 15px">
+                                                Puffer Five: MR Surfboards (Small wave performance)
+                                                6'2, 21 1/4", 2 5/8": volume = 38.4
+                                                ...My estimate: 37.686 <strong>(- 0.714)</strong><br></p>
+                                            <p style="font-size: 15px">
+                                                Magic Door: Rusty Surfboards (All rounder)
+                                                6'4, 20 1/2", 2 3/4" volume = 38.1
+                                                ...My estimate: 38.367 <strong>(+ 0.267)</strong><br></p>
+                                            <p style="font-size: 15px">
+                                                DX1 JF: DHD Surfboards (High performance)
+                                                6'3, 19 1/2", 2 1/2" volume = 32.38
+                                                ...My estimate: 31.285 <strong>(- 1.095)</strong><br></p>
+                                        <br>
+                                        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <img src="../img/boardmeasurements.png" class="img-responsive">
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <img src="../img/pca_with_ellipses.png" class="img-responsive">
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-
-    <div class="contentwrapper">
-        <div class="title_area"><h1>Calculate surfboard volume</h1>
-        </div>
-        <div>
-        <div class="leftsided_figure" id="boardspage">
-            <div id="image_container">
-                <div>
-                    Example entries:
-                    <ul>
-                    <li>Length <b>6 4</b></li>
-                    <li>Width <b>18 1/2</b></li>
-                    <li>Thickness <b>2 1/4</b></li>
-                    </ul>
-                    <br>
-
-                    <form id="frm1" method="post">
-                        <p>
-                            <div>
-                                <label>Board type:</label>
-                                <!--<input id="boardtype" list="boards">-->
-                                <select id="boards" onchange="myFunction()">
-                                    <option value="HP">High Performance (HP)</option>
-                                    <option value="FHP">Friendly High Performance (FH)</option>
-                                    <option value="AR">All rounder (AR)</option>
-                                    <option value="SW">Small wave performance (SW)</option>
-                                    <option value="FI">Fish/Grovel (FI)</option>
-                                </select>
-                            </div>
-
-                            <div>
-                            <label for="id_length">Length:</label>
-                            <input id="len" type="text" maxlength="100"/>
-                            </div>
-                        </p>
-                        <p>
-                            <div>
-                            <label for="id_width">Width:</label>
-                            <input id="wid" type="text" maxlength="100"/>
-                            </div>
-                        </p>
-                        <p>
-                            <div>
-                            <label for="id_thickness">Thickness:</label>
-                            <input id="thick" type="text" maxlength="100"/>
-                            </div>
-                        </p>
-                    </form>
-
-                    <br>
-                    <br>
-
-                    </div>
-
-                    <p>Click "Calculate" to display board volume </p>
-                    <button onclick="myFunction()">Calculate</button>
-                    <p id="demo"></p>
-                    <h3 id="last_calc" style="color: #3366CC"></h3>
-                    <p id="myLastCalculation" style="color: #3366CC"></p>
-
-
-                    </div>
-            </div>
-            <div class="middle_content" id="boardspage">
-                <img id="surfboardImage" src="../img/Highperformance.png">
-            </div>
-            </div> <!-- End of grouping of left and middle content-->
-
-
-            <div class="rightsided_content" id="boardspage">
-                <div>
-                    <h2>Data</h2>
-                        <p>
-                            Formula created using multiple regression. Board type
-                            is coded as a dummy variable. Calculations based on 285 shapes of
-                            33 distinct boards from 7 manufacturers.
-                        </p>
-                        <!-- Trigger the modal with a button -->
-                        <div id="board_data_buttons1">
-                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Dissimilarity between boards</button>
-                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Dissimilarity in board type</button>
-                        </div>
-                        <div id="board_data_buttons2">
-                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Distribution of board measurements</button>
-                            <a href='../data/board_data' download='data.csv'><button style="width: 220px" type="button" class="btn btn-primary">Download Board Data</button></a>
-                        </div>
-
-                        <div id='testresults'>
-                            <h4>Tests:</h4>
-                            <p style="font-size: 15px">
-                                Super Fling: Superbrand (Fish)<br>
-                                5'6, 20 1/4", 2 5/8": volume = 32.90
-                                ...My estimate: 32.509 <strong>(- 0.390)</strong><br></p>
-                            <p style="font-size: 15px">
-                                Couch Potato: Lost (Fish)<br>
-                                5'10, 22 1/2", 2 5/8": volume = 40.8
-                                ...My estimate: 40.502 <strong>(- 0.230)</strong><br></p>
-                            <p style="font-size: 15px">
-                                Puffer Five: MR Surfboards (Small wave performance)<br>
-                                6'2, 21 1/4", 2 5/8": volume = 38.4
-                                ...My estimate: 37.686 <strong>(- 0.714)</strong><br></p>
-                            <p style="font-size: 15px">
-                                Magic Door: Rusty Surfboards (All rounder)<br>
-                                6'4, 20 1/2", 2 3/4" volume = 38.1
-                                ...My estimate: 38.367 <strong>(+ 0.267)</strong><br></p>
-                            <p style="font-size: 15px">
-                                DX1 JF: DHD Surfboards (High performance)<br>
-                                6'3, 19 1/2", 2 1/2" volume = 32.38
-                                ...My estimate: 31.285 <strong>(- 1.095)</strong><br></p>
-                        </div>
-                </div><br>
-
-
-
-                <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <img src="../img/boardmeasurements.png" class="img-responsive">
-                        </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <img src="../img/pca_with_ellipses.png" class="img-responsive">
-                        </div>
-                    </div>
-                  </div>
-                </div>
-            </div> <!-- End right sided content -->
-    </div>
-
-
-<script>
-function centerModal() {
-    $(this).css('display', 'block');
-    var $dialog = $(this).find(".modal-dialog");
-    var offset = ($(window).height() - $dialog.height()) / 2;
-    // Center modal vertically in window
-    $dialog.css("margin-top", offset);
-}
-
-$('.modal').on('show.bs.modal', centerModal);
-$(window).on("resize", function () {
-    $('.modal:visible').each(centerModal);
-});
-</script>
-
-</body>
+    <script>
+        function centerModal() {
+            $(this).css('display', 'block');
+            var $dialog = $(this).find(".modal-dialog");
+            var offset = ($(window).height() - $dialog.height()) / 2;
+            // Center modal vertically in window
+            $dialog.css("margin-top", offset);
+        }
+        $('.modal').on('show.bs.modal', centerModal);
+        $(window).on("resize", function () {
+            $('.modal:visible').each(centerModal);
+        });
+    </script>
+    </body>
 </html>

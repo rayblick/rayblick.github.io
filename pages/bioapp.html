@@ -1,80 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="home" content="landing" />
+  <head>>
     <meta charset="utf-8" />
     <meta lang="en" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ray Blick</title>
-
-    <!--Stylesheets-->
-    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />-->
-    <link rel="stylesheet" type="text/css" href="../css/styles_edited.css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Ubuntu|Oswald' rel='stylesheet' type='text/css'>
-
-</head>
-<body>
-    <header>
-        <div id='header-container'>
-            <div id='header-logo'>
-                <a href='../index.html'>
-                    <img id="homeicon" src="../img/Home-icon.png" alt="Home" style="width:60px;height:60px;border:0">
-                </a>
-            </div>
-
-            <div id='button-wrapper'>
-
-                <div id='header-button'>
-                    <a href='healthapp.html'
-                    class="btn btn-primary">Health App</a>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="../css/prism.css" />
+    <script>
+        function changeImage() {
+            var image = document.getElementById('myImage');
+            if (image.src.match("asciileaf")) {
+                image.src = "../img/hexleaf_crop.png";
+            } else {
+                image.src = "../img/asciileaf_crop.png";
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='main-wrapper'>
+                <div class="sidebar">
+                    <div class="sidebar-logo">
+                        <img id="myImage" onclick="changeImage()" src="../img/hexleaf_crop.png">
+                    </div>
+                    <div class="sidebar-title">
+                        Ray Blick
+                    </div>
+                    <hr class='sectionbreak'>
+                    <div class="sidebar-documentation">
+                        <strong>Projects</strong>
+                        <br>
+                        <div class="sidebar-list-indent">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="healthapp.html">Health App</a></li>
+                            <li><a href="bioapp.html">Bio Video App</a></li>
+                            <li><a href="samplinggame.html">Sampling Game</a></li>
+                            <li><a href="boardvolume.html">Surfboard Volume</a></li>
+                            <li><a href="surfmaps.html">Surf maps</a></li>
+                            <li><a href="virtualecologist.html">Virtual Ecologist</a></li>
+                        </div>
+                    </div>
                 </div>
-                <div id='header-button'>
-                    <a href='bioapp.html'
-                    class="btn btn-primary">Bio App</a>
+                <div class='title-container'>
+                    <h1>Bio Video App</h1>
                 </div>
-                <div id='header-button'>
-                    <a href='samplinggame.html'
-                    class="btn btn-primary">Sampling game</a>
-                </div>
-                <div id='header-button'>
-                    <a href='boardvolume.html'
-                    class="btn btn-primary">Calculate surfboard volume</a>
-                </div>
-                <div id='header-button'>
-                    <a href='virtualecologist.html'
-                    class="btn btn-primary">Virtual ecology</a>
+                <div class='maincontent-wrapper'>
+                    <hr class='sectionbreak'>
+                    <div class="documentation-wrapper">
+                        <div class="documentation-container">
+                            <div class="documentation-content">
+                                <!-- image -->
+                                Quick search course related content
+                                This is a screen shot from the
+                                live/reactive application deployed with
+                                shiny apps io.
+                                <a href=http://rblick.shinyapps.io/bioApp/ target=_blank>
+                                go to the live shiny site</a>
+                                <div id="image_container">
+                                    <div id="bioapp_image"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-
-    <div class="contentwrapper">
-      <div class="title_area">
-        <h1>quick search bio videos</h1>
-      </div>
-      <div class="leftsided_figure">
-        <div id="image_container">
-          <div id="bioapp_image"></div>
-        </div>
-      </div>
-      <div class="rightsided_content">
-          <div>
-             <h2>R shiny apps io</h2>
-             <p>
-                 Quick search course related content
-             </p>
-             <p>This is a screen shot from the
-                 live/reactive application deployed with
-                 shiny apps io.
-             </p>
-             <p>
-                 <a href=http://rblick.shinyapps.io/bioApp/>
-                    go to the live shiny site
-                </a>
-             </p>
-      </div>
-    </div>
-    </div>
-</body>
+    </body>
 </html>

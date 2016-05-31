@@ -1,0 +1,149 @@
+/* CSS - style.css */
+
+a{
+    text-decoration:none;
+    color: black!important;
+}
+a:hover{
+    color: darkblue;
+}
+hr.sectionbreak {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.container{
+    width: 100%!important;
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+.main-wrapper{
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+.sidebar {
+    width: 250px;
+    padding: 2%;
+    float: left;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    background: #e0e0d1;
+    color: black;
+}
+.sidebar-title{
+    height:4%;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+.sidebar-logo{
+    padding: 2%;
+    height:25%;
+    background-image: url('../img/placeholder-icon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.sidebar-documentation{
+    height: 37%;
+    margin-bottom:5%;
+    padding: 2%;
+}
+.sidebar-list-indent{
+    margin: 5%;
+}
+
+.title-container{
+    /* color added for dev purposes */
+    /*background-color: lightgrey;*/
+    margin: auto;
+    padding-left: 250px;
+    width: auto;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.maincontent-wrapper{
+    height: auto;
+    padding-left: 250px;
+}
+
+.documentation-wrapper{
+    display: flex;
+    margin-left:2%;
+    margin-right: 2%;
+    height: auto;
+}
+.documentation-container{
+    margin-left: 4%;
+    margin-right: 4%;
+    height: auto;
+    width: 100%;
+}
+.documentation-content{
+    margin-left: 2%;
+    margin-right:2%;
+    margin-bottom: 2%;
+    width: 100%;
+    display: inline-block;
+}
+.documentation-content-form{
+    width: 100%;
+    height: 400px;
+}
+.documentation-content-left-50{
+    float: left;
+    width: 50%;
+}
+.documentation-content-right-50{
+    float:left;
+    width: 50%;
+}
+
+.boardvolume-testresults{
+    padding: 5%;
+    border-style: solid;
+    border-color: black;
+    background-color: lightgrey;
+
+}
+#bioapp_image{
+    background-image: url("../img/bioApp.png");
+    height: 550px;
+}
+#health_image{
+    background-image: url("../img/healthapp.png");
+    height: 550px;
+}
+#ve_image{
+    background-image: url("../img/transects2014.jpg");
+    height: 800px;
+}
+#samplinggame_image{
+    background-image: url("../img/sampling_game.png");
+    height: 450px;
+}
+#image_container{
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+#myImage{
+    display: inline-flex;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+}
+#health_image, #ve_image, #samplinggame_image, #bioapp_image{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#board_data_buttons1{
+    margin-top: 5%;
+}
+#board_data_buttons2{
+    margin-bottom: 5%;
+}
