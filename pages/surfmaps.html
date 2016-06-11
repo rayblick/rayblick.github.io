@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>>
+    <meta charset="utf-8" />
+    <meta lang="en" />
+    <title>Ray Blick</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu|Oswald' rel='stylesheet' type='text/css'>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="../css/prism.css" />
+    <script>
+        function changeImage() {
+            var image = document.getElementById('myImage');
+            if (image.src.match("asciileaf")) {
+                image.src = "../img/hexleaf_crop.png";
+            } else {
+                image.src = "../img/asciileaf_crop.png";
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='main-wrapper'>
+                <div class="sidebar">
+                    <div class="sidebar-logo">
+                        <img id="myImage" onclick="changeImage()" src="../img/hexleaf_crop.png">
+                    </div>
+                    <div class="sidebar-title">
+                        Ray Blick
+                    </div>
+                    <hr class='sectionbreak'>
+                    <div class="sidebar-documentation">
+                        <strong>Projects</strong>
+                        <br>
+                        <div class="sidebar-list-indent">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="healthapp.html">Health App</a></li>
+                            <li><a href="bioapp.html">Bio Video App</a></li>
+                            <li><a href="samplinggame.html">Sampling Game</a></li>
+                            <li><a href="boardvolume.html">Surfboard Volume</a></li>
+                            <li><a href="surfmaps.html">Surf maps</a></li>
+                            <li><a href="virtualecologist.html">Virtual Ecologist</a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class='title-container'>
+                    <h1>Plot primary and secondary wave trains</h1>
+                    Secondary objective: use Prism.js for syntax highlighting
+                </div>
+                <div class='maincontent-wrapper'>
+                    <hr class='sectionbreak'>
+                    <div class="documentation-wrapper">
+                        <div class="documentation-container">
+                            <div class="documentation-content">
+                                <!-- image -->
+                                <div id="surfmap_image_container">
+                                    <div id="primary_swell_image"></div>
+                                    <div id="secondary_swell_image"></div>
+                                </div>
+                                <h3> Import libraries </h3>
+                                <pre class="language-Python">
+                                    <code class="language-Python" style="white-space:pre-wrap">
+from bs4 import BeautifulSoup
+import requests
+from datetime import datetime, timedelta
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap, addcyclic
+from scipy.ndimage.filters import minimum_filter, maximum_filter
+from netCDF4 import Dataset
+import glob
+from github import Github
+import os
+import matplotlib.cm as cm
+                                    </code>
+                                </pre>
+                                <h3> Create date handle </h3>
+                                <pre class="language-Python">
+                                    <code class="language-Python" style="white-space:pre-wrap">
+def date_handle():
+    """
+    Gets the date. The GrADS Data Server updates at approx 4am UTC time.
+    Returns date for the previous day if before ~4am.
+    """
+    if int(datetime.utcnow().strftime('%H%m')) <= int('0430'):
+        date = (datetime.utcnow() + timedelta(days=-1)).strftime('%Y%m%d')
+    else:
+        date = datetime.utcnow().strftime('%Y%m%d')
+    return date
+                                    </code>
+                                </pre>
+                                <h3> Create an address handle to data server</h3>
+                                <pre class="language-Python">
+                                    <code class="language-Python" style="white-space:pre-wrap">
+# tacks on date to web address
+def address_handle(datatype):
+    date = date_handle()
+    if datatype == "pressure_system":
+        URL = "http://nomads.ncep.noaa.gov:9090/dods/gfs_0p25_1hr/gfs{}".format(date)
+    elif datatype == "wave_information":
+        URL = "http://nomads.ncep.noaa.gov:9090/dods/wave/nww3/nww3{}".format(date)
+    else:
+        URL = False
+    return URL
+                                    </code>
+                                </pre>
+
+                                <h3> Collect href links that lead to datasets</h3>
+                                <pre class="language-Python">
+                                    <code class="language-Python" style="white-space:pre-wrap">
+def weblink_collector(url):
+    """
+    The GrADS Data Server defined by url ONLY provides an html with more links.
+    Depending on the time of day this page will have 1 to 4 (or more) href links.
+    This function collects the href links from the given url.
+    """
+    try:
+        web_request  = requests.get(url)
+        webdata = web_request.text
+        soup = BeautifulSoup(webdata, 'html.parser')
+        web_address_list = []
+        for link in soup.find_all('a'):
+            if link.text == 'dds':
+                lt = link.get('href')
+                pw = lt.rstrip('.dds')
+                web_address_list.append(pw)
+        return web_address_list
+    except requests.exceptions.RequestException as e:    # This is the correct syntax
+        print(e)
+                                    </code>
+                                </pre>
+
+                                <h3>Collect most recent dataset</h3>
+                                <pre class="language-Python">
+                                    <code class="language-Python" style="white-space:pre-wrap">
+def weblink_handle(weblink_collection):
+    """Drops old links, keeping only the most recent one. The web_request must
+    recognise UTC and AEST differences. This is done in date_handle()."""
+    web_request = weblink_collection.pop()
+    print(web_request)
+    return web_request
+
+
+def netcdf4_handle(weblink):
+    """Collect data"""
+    return Dataset(weblink)
+                                    </code>
+                                </pre>
+
+                                <h3>Main function</h3>
+                                <pre class="language-Python">
+                                    <code class="language-Python" style="white-space:pre-wrap">
+def wave_information_main():
+    """Main function implementing data handling procedures"""
+    # collect wave information (other options: 'pressure_system')
+    ps = address_handle('wave_information')
+    # get list of hrefs leading to data
+    wc = weblink_collector(ps)
+    # get most recent data released (pops wc)
+    wh = weblink_handle(wc)
+    # collect netcdf4 dataset
+    wim = netcdf4_handle(wh)
+    return wim
+                                    </code>
+                                </pre>
+
+
+                                <h3>Plotting function</h3>
+                                <pre class="language-python">
+                                    <code class="language-python" style="white-space:pre-wrap">
+def plot_inset_wavedirection(wave_dataset, wave_train):
+    """
+    Function to plot the wave period and direction along the east coast
+    of Australia.
+
+    Plotting function takes two arguments:
+    1) wave_dataset which is an object returned from wave_information_main()
+    2) wave_train ('primary' or 'secondary')
+
+    Output is a timestamped png image showing wave period and direction.
+    The scale for primary and secondary wave trains are different.
+    """
+    # help from: http://matplotlib.1069221.n5.nabble.com/plot-arrows-for-wind-direction-degrees-td13499.html
+    # http://earthpy.org/earthpy-basemap-amazon.html
+    fig=plt.figure(figsize=(5,11))
+    # collect lats and longs
+    lat  = wave_dataset.variables['lat'][:-80]
+    lon  = wave_dataset.variables['lon'][110:-120]
+    # Primary swell
+    if wave_train=="primary":
+        wavedir = wave_dataset.variables['dirpwsfc'][1,:-80,110:-120]
+        swellperiod = wave_dataset.variables['perpwsfc'][1,:-80,110:-120]
+    elif wave_train=="secondary":
+        wavedir = wave_dataset.variables['dirswsfc'][1,:-80,110:-120]
+        swellperiod = wave_dataset.variables['perswsfc'][1,:-80,110:-120]
+    # Create basemap
+    m = Basemap(llcrnrlon=145,llcrnrlat=-50,\
+            urcrnrlon=160,urcrnrlat=-10,\
+            projection='merc', resolution='i')
+    # draw map features
+    m.drawcoastlines(linewidth=1.25)
+    m.fillcontinents(color='0.8')
+    x, y = m(*np.meshgrid(lon,lat))
+    # flip using minus 1
+    # Primary swell arrows -> modified lengths
+    u = 1-(swellperiod**2/100)*np.sin(np.deg2rad(wavedir))
+    v = 1-(swellperiod**2/100)*np.cos(np.deg2rad(wavedir))
+    uproj,vproj,xx,yy = m.transform_vector(\
+            u,v,lon,lat,5,10,returnxy=True,masked=True)
+    m.drawmapboundary(fill_color='blue')
+    # plot contour of swell
+    cs = m.contourf(x,y,swellperiod,
+            # levels (third step) changes contour fill
+            levels=np.arange(8,20,1),cmap=cm.coolwarm,
+            vmin=8,vmax=20 )
+    cbar = m.colorbar(cs,
+            location='right',pad="5%")
+    Q = m.quiver(xx,yy,uproj,vproj,
+            # changing the width changes the boldness of
+            # each arrow. Pivot at tip so arrow head is over
+            # water, not land when next to the coastline.
+            scale=10,width=0.005,pivot='tip')
+    date = datetime.now().strftime('%Y%m%d %H%M')
+    plt.title('{} swell direction and\n wave period ({})'.format(wave_train, date))
+    plt.savefig('img/wavedirection_{}_{}.png'.format(wave_train, date))
+                                    </code>
+                                </pre>
+                                <h3>Run</h3>
+                                <pre class="language-python">
+                                    <code class="language-Python" style="white-space:pre-wrap">
+w = wave_information_main()
+plot_inset_wavedirection(w, 'primary')
+plot_inset_wavedirection(w, 'secondary')
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="../js/prism.js"></script>
+    </body>
+</html>

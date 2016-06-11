@@ -130,9 +130,28 @@ hr.sectionbreak {
     background-image: url("../img/sampling_game.png");
     height: 450px;
 }
+#primary_swell_image, #secondary_swell_image{
+    height: 900px;
+    width: 410px;
+}
+#primary_swell_image{
+    background-image: url("../img/wavedirection_primary_20160605 0811.png");
+    float: left;
+}
+#secondary_swell_image{
+    background-image: url("../img/wavedirection_secondary_20160605 0811.png");
+    float: left;
+}
 #image_container{
     margin-top: 3%;
     margin-bottom: 5%;
+}
+#surfmap_image_container{
+    height: auto;
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    display: inline-block;
 }
 #myImage{
     display: inline-flex;
@@ -140,7 +159,8 @@ hr.sectionbreak {
     height: auto;
     margin: 0px;
 }
-#health_image, #ve_image, #samplinggame_image, #bioapp_image{
+#health_image, #ve_image, #samplinggame_image, #bioapp_image, #primary_swell_image,
+#secondary_swell_image{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
