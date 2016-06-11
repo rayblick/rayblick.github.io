@@ -37,12 +37,12 @@
                         <br>
                         <div class="sidebar-list-indent">
                             <li><a href="../index.html">Home</a></li>
-                            <li><a href="healthapp.html">Health App</a></li>
-                            <li><a href="bioapp.html">Bio Video App</a></li>
-                            <li><a href="samplinggame.html">Sampling Game</a></li>
-                            <li><a href="boardvolume.html">Surfboard Volume</a></li>
-                            <li><a href="surfmaps.html">Surf maps</a></li>
-                            <li><a href="virtualecologist.html">Virtual Ecologist</a></li>
+                            <li><a href="healthapp.html">Health App (R)</a></li>
+                            <li><a href="bioapp.html">Bio Video App (R)</a></li>
+                            <li><a href="samplinggame.html">Sampling Game (Python)</a></li>
+                            <li><a href="boardvolume.html">Surfboard Volume (JavaScript)</a></li>
+                            <li><a href="surfmaps.html">Surf maps (Python)</a></li>
+                            <li><a href="virtualecologist.html">Virtual Ecologist (Python)</a></li>
                         </div>
                     </div>
                 </div>
@@ -54,26 +54,50 @@
                     <div class="documentation-wrapper">
                         <div class="documentation-container">
                             <div class="documentation-content">
-                                <h4>Optimising ecological surveys</h4><br>
+                                <h3>Optimising ecological surveys</h3><br>
                                     <p>
                                     The VE toolset can optimize transect length in an ecological monitoring program.
                                     The primary goal is to reduce transect length (and overall cost)
                                     without losing the power to detect a difference between surveys
                                     (e.g. seasonal surveys).<br><br>
 
-                                    The virtual ecologist acts as a second observer calibrated by your
-                                    staff. <br><br>
+                                    <div style="width: 100%; text-align: center;">
+                                        <h4 style="max-width: 800px; margin: auto;"><i>The virtual ecologist acts as a second observer calibrated by your
+                                            staff. Reduce transect length without losing the ability to detect
+                                            change and reduce cost by optimising time spent collecting data.</i></h4><br><br>
+                                    </div>
 
                                     These tools assume that the data were collected from transects
                                     (which are variable in length), and each transect contains sequential
-                                    data collection points. E.g. A 50 meter transect with 1m2 plots
-                                    spaced 4 meters apart. These tools also assume that you are assessing grouped data
+                                    data collection points (e.g. A 50 meter transect with 1m2 plots
+                                    spaced 4 meters apart) to assess grouped data at an individual location
                                     (e.g. functional groups, lifeforms, guilds or a custom list
-                                    of groupings used to cluster species) at an individual location.
-                                    </p>
+                                    of groupings used to cluster species).<br><br>
+                                </p><br>
+
+                                    <h4> Background </h4>
                                     <p>
-                                    <a href=https://github.com/rayblick/Virtual-Ecologist/>
-                                       go to project homepage</a>
+                                        Simulating data is a common method in ecology to evaluate patterns of interacting species.
+                                        A classic example was the approach by Connor and Simberloff (1979), who re-evaluated Jared Diamond's (1975)
+                                        assembly rules for bird species on the Bismarck Archipelago. By employing a simple null model, Connor and
+                                        Simberloff (1979) compared the original co-occurrence pattern of birds on islands, with a virtual dataset
+                                        that would arise if bird species randomly occupied islands. There are many examples of similar
+                                        tests in ecology; the code I have written is geared towards the virtual ecologist approach of simulating
+                                        data collection for the purpose of optimising vegetation surveys.<br><br>
+
+                                        The virtual ecologist is an "approach where simulated data and observer models are used to mimic real species
+                                        and how they are virtually observed." (Zurell et al. 2009). Under this scenario, a researcher can model the
+                                        entire data collection process and evaluate the effects of different sampling designs and sampling effort
+                                        in different environments. The code I present
+                                        <a href=https://github.com/rayblick/Virtual-Ecologist/blob/master/virtualecologist/virtualecologist.py style="color: blue!important;">here</a>
+                                        employs the virtual ecologist approach to generate a second observer (sometimes refered to as a pseudo-observer)
+                                        for an entire flora monitoring programme that would allow me to calculate the minimum detectable difference (MDD)
+                                        that we expect to see as we reduced transect length. The overall aim is to reduce transect length to a minimum
+                                        size that will allow us to detect an <i>a priori</i> trigger value that we determined necessary in the monitoring
+                                        programme, and ulitmately optimise our time spent in the field.<br><br>
+
+                                    <a href=https://github.com/rayblick/Virtual-Ecologist/ style="color: blue!important;">
+                                       <h4>Go to project homepage</h4></a>
                                     </p>
                                     <div id="image_container">
                                       <div id="ve_image"></div>

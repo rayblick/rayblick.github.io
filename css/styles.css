@@ -23,7 +23,7 @@ hr.sectionbreak {
     height: auto;
 }
 .sidebar {
-    width: 250px;
+    width: 300px;
     padding: 2%;
     float: left;
     position: fixed;
@@ -40,7 +40,7 @@ hr.sectionbreak {
 }
 .sidebar-logo{
     padding: 2%;
-    width: 175px;
+    width: 200px;
     height:auto;
     background-image: url('../img/placeholder-icon.png');
     background-repeat: no-repeat;
@@ -108,7 +108,7 @@ hr.sectionbreak {
 }
 
 .boardvolume-testresults{
-    padding: 5%;
+    padding-left: 5%;
     border-style: solid;
     border-color: black;
     background-color: lightgrey;
