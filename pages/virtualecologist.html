@@ -10,16 +10,8 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu|Oswald' rel='stylesheet' type='text/css'>
     <script src="js/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="../css/prism.css" />
-    <script>
-        function changeImage() {
-            var image = document.getElementById('myImage');
-            if (image.src.match("asciileaf")) {
-                image.src = "../img/hexleaf_crop.png";
-            } else {
-                image.src = "../img/asciileaf_crop.png";
-            }
-        }
-    </script>
+    <!--My JavaScript Scripts -->
+    <script src="../js/hexleaf.js"></script>
     </head>
     <body>
         <div class='container'>
@@ -33,10 +25,10 @@
                     </div>
                     <hr class='sectionbreak'>
                     <div class="sidebar-documentation">
+                        <a href="../index.html"><strong>Home</strong></a><br>
                         <strong>Projects</strong>
                         <br>
                         <div class="sidebar-list-indent">
-                            <li><a href="../index.html">Home</a></li>
                             <li><a href="healthapp.html">Health App (R)</a></li>
                             <li><a href="bioapp.html">Bio Video App (R)</a></li>
                             <li><a href="samplinggame.html">Sampling Game (Python)</a></li>
@@ -92,9 +84,9 @@
                                         <a href=https://github.com/rayblick/Virtual-Ecologist/blob/master/virtualecologist/virtualecologist.py style="color: blue!important;">here</a>
                                         employs the virtual ecologist approach to generate a second observer (sometimes refered to as a pseudo-observer)
                                         for an entire flora monitoring programme that would allow me to calculate the minimum detectable difference (MDD)
-                                        that we expect to see as we reduced transect length. The overall aim is to reduce transect length to a minimum
-                                        size that will allow us to detect an <i>a priori</i> trigger value that we determined necessary in the monitoring
-                                        programme, and ulitmately optimise our time spent in the field.<br><br>
+                                        that we expect to see as we reduced transect length. The aim is to reduce transect length to a minimum
+                                        size while keeping the power to detect 'real' differences in the environment that exceeds the sampling noise 
+                                        introduced by multiple observers.<br><br>
 
                                     <a href=https://github.com/rayblick/Virtual-Ecologist/ style="color: blue!important;">
                                        <h4>Go to project homepage</h4></a>

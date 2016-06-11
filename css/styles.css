@@ -106,14 +106,12 @@ hr.sectionbreak {
     float:left;
     width: 50%;
 }
-
-.boardvolume-testresults{
-    padding-left: 5%;
-    border-style: solid;
-    border-color: black;
-    background-color: lightgrey;
-
+button#boardbutton{
+    width: 260px;
+    display: block;
+    margin-top: 5px;
 }
+
 #bioapp_image{
     background-image: url("../img/bioApp.png");
     height: 550px;
@@ -164,10 +162,4 @@ hr.sectionbreak {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-}
-#board_data_buttons1{
-    margin-top: 5%;
-}
-#board_data_buttons2{
-    margin-bottom: 5%;
 }

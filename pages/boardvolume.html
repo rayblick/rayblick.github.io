@@ -3,127 +3,16 @@
   <head>>
     <meta charset="utf-8" />
     <meta lang="en" />
-    <title>VOL</title>
+    <title>Ray Blick</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
     <link href='https://fonts.googleapis.com/css?family=Ubuntu|Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/prism.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script>
-        function changeImage() {
-            var image = document.getElementById('myImage');
-            if (image.src.match("asciileaf")) {
-                image.src = "../img/hexleaf_crop.png";
-            } else {
-                image.src = "../img/asciileaf_crop.png";
-            }
-        }
-    </script>
-    <script>
-        // USED TO EVALUATE WIDTH AND THICKNESS MEASUREMENTS
-        // e.g. form dom_object = document.getElementById("frm1");
-        // e.g. string_id = thick ---><input id="thick" type="text"/>
-        function parse_strings(y){
-            // if the dom object looks like 6 1/2
-            if(y.length > 1){
-                var z = y[1].split('/');
-                var v = (parseInt(y[0]) + (parseInt(z[0]) / parseInt(z[1])));
-                return v
-            }
-            else{
-                var z = y[0].split('/');
-                // parsed dom_object is a fraction like 1/2
-                if(z.length > 1){
-                    var v = (parseInt(z[0]) / parseInt(z[1]));
-                    return v
-                }
-                // parsed dom object is just an integer like 6
-                else{
-                    var v = (parseInt(y[0]));
-                    return v
-                }
-            }
-        }
-
-        // PARSE LENGTH MEASUREMENTS
-        function parse_length(y){
-            if(y.length > 1){
-                var v = (parseInt(y[0]) + (parseInt(y[1]) / 12));
-                return v
-            }
-            else{
-                var v = (parseInt(y[0]));
-                return v
-            }
-        }
-        var myArray = []
-
-        function myFunction() {
-            // get the dom form object
-            var x = document.getElementById("frm1");
-
-            // Extract the values for each measurement
-            // Also split each string on white space
-            var l = x.len.value.split(" ");
-            var w = x.wid.value.split(" ");
-            var t = x.thick.value.split(" ");
-
-            // parse the form input boxes
-            var len = parse_length(l)
-            var wid = parse_strings(w)
-            var thick = parse_strings(t)
-
-            // check if length width and thickness fall inside
-            // appropriate dimensions
-
-            if(x.boards.value == "AR"){
-                var boardtype = 0.0
-                $('img#surfboardImage').attr("src","../img/allrounder.png")
-            }
-            else if (x.boards.value == "HP") {
-                var boardtype = -2.155433
-                $('img#surfboardImage').attr("src","../img/Highperformance.png")
-            }
-            else if (x.boards.value == "FHP") {
-                var boardtype = -1.275470
-                $('img#surfboardImage').attr("src","../img/Friendly high performance.png")
-            }
-            else if (x.boards.value == "SW") {
-                var boardtype = -0.675191
-                $('img#surfboardImage').attr("src","../img/Smallwave.png")
-            }
-            else if (x.boards.value == "FI") {
-                var boardtype = 1.014127
-                $('img#surfboardImage').attr("src","../img/grovelfish.png")
-            }
-            // calculate volume
-            var volume = -75.197048 + boardtype + 6.390996 * len
-                        + 2.605445 * wid
-                        + 7.154882 * thick
-
-            var volume = volume.toFixed(3)
-
-            // return the volume to the html tag "demo"
-            if(x.len.value != "" && x.wid.value != "" && x.thick.value != ""){
-                document.getElementById("demo").innerHTML = volume + ' litres';
-
-                // save each search to an array (gets wiped on page reload)
-                myArray.push(x.boards.value + '; length: ' + x.len.value + '; width: ' +
-                            x.wid.value + '; thickness: ' + x.thick.value + ' = ' + volume)
-                myArrayLength = myArray.length - 1
-
-                // on the second request show the last calculation
-                if(myArrayLength >= 1){
-                    document.getElementById("last_calc").innerHTML = "Your last calculation: "
-                    document.getElementById("myLastCalculation").innerHTML = myArray[myArrayLength-1]
-                }
-            }
-            else{
-                document.getElementById("demo").innerHTML = "";
-            }
-        }
-    </script>
+    <!--My JavaScript Scripts -->
+    <script src="../js/hexleaf.js"></script>
+    <script src="../js/boardvolume.js"></script>
     </head>
     <body>
         <div class='container'>
@@ -137,10 +26,10 @@
                     </div>
                     <hr class='sectionbreak'>
                     <div class="sidebar-documentation">
+                        <a href="../index.html"><strong>Home</strong></a><br>
                         <strong>Projects</strong>
                         <br>
                         <div class="sidebar-list-indent">
-                            <li><a href="../index.html">Home</a></li>
                             <li><a href="healthapp.html">Health App (R)</a></li>
                             <li><a href="bioapp.html">Bio Video App (R)</a></li>
                             <li><a href="samplinggame.html">Sampling Game (Python)</a></li>
@@ -153,7 +42,7 @@
                 <div class='title-container'>
                     <h1>Calculate surfboard volume</h1>
                     Secondary objective: use JavaScript for form calculations<br>
-                    Tertiary objective: develop the use of modals to deliver content<br>
+                    Tertiary objective: use modals<br>
                 </div>
                 <div class='maincontent-wrapper'>
                     <hr class='sectionbreak'>
@@ -209,42 +98,40 @@
                                 <hr class='sectionbreak'>
 
                                 <div class="documentation-content">
-                                    <h4>Tests:</h4>
+                                    <h4>Tests</h4>
                                         <p>
                                             Formula created using multiple regression. Board type
                                             is coded as a dummy variable. Calculations based on 285 shapes of
                                             33 distinct boards from 7 manufacturers.
                                         </p>
                                         <!-- Trigger the modal with a button -->
-                                        <div id="board_data_buttons1">
-                                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Dissimilarity between boards</button>
-                                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Dissimilarity in board type</button>
+                                        <div>
+                                            <button id="boardbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Dissimilarity between boards</button>
+                                            <button id="boardbutton"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Dissimilarity in board type</button>
+                                            <button id="boardbutton"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Distribution of board measurements</button>
+                                            <a href='../data/board_data' download='data.csv'><button id="boardbutton"  type="button" class="btn btn-primary">Download Board Data (19.1 kB)</button></a>
                                         </div>
-                                        <div id="board_data_buttons2">
-                                            <button style="width: 220px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Distribution of board measurements</button>
-                                            <a href='../data/board_data' download='data.csv'><button style="width: 220px" type="button" class="btn btn-primary">Download Board Data</button></a>
-                                        </div>
-
+                                        <br><br>
                                         <div class='boardvolume-testresults'>
-                                            <h4>Tests:</h4>
+                                            <h4>Results</h4>
                                             <p style="font-size: 15px">
-                                                Super Fling: Superbrand (Fish)
+                                                1) Super Fling: Superbrand (Fish)
                                                 5'6, 20 1/4", 2 5/8": volume = 32.90
                                                 ...My estimate: 32.509 <strong>(- 0.390)</strong><br></p>
                                             <p style="font-size: 15px">
-                                                Couch Potato: Lost (Fish)
+                                                2) Couch Potato: Lost (Fish)
                                                 5'10, 22 1/2", 2 5/8": volume = 40.8
                                                 ...My estimate: 40.502 <strong>(- 0.230)</strong><br></p>
                                             <p style="font-size: 15px">
-                                                Puffer Five: MR Surfboards (Small wave performance)
+                                                3) Puffer Five: MR Surfboards (Small wave performance)
                                                 6'2, 21 1/4", 2 5/8": volume = 38.4
                                                 ...My estimate: 37.686 <strong>(- 0.714)</strong><br></p>
                                             <p style="font-size: 15px">
-                                                Magic Door: Rusty Surfboards (All rounder)
+                                                4) Magic Door: Rusty Surfboards (All rounder)
                                                 6'4, 20 1/2", 2 3/4" volume = 38.1
                                                 ...My estimate: 38.367 <strong>(+ 0.267)</strong><br></p>
                                             <p style="font-size: 15px">
-                                                DX1 JF: DHD Surfboards (High performance)
+                                                5) DX1 JF: DHD Surfboards (High performance)
                                                 6'3, 19 1/2", 2 1/2" volume = 32.38
                                                 ...My estimate: 31.285 <strong>(- 1.095)</strong><br></p>
                                         <br>
@@ -269,6 +156,190 @@
                                         </div>
                                     </div>
                             </div>
+                            <hr class='sectionbreak'>
+
+                            <div class="documentation-content">
+                                <h4>Code</h4>
+                                <h4>HTML: form fields</h4>
+                                <pre class="language-markup">
+                                    <code class="language-markup" style="white-space:pre-wrap">
+&lt;!-- form with four fields -->
+&lt;form id="frm1" method="post">
+    &lt;p>
+        &lt;div>
+            &lt;!-- field one: board selection -->
+            &lt;!-- Changes image shown on page (omitted from html) -->
+            &lt;label>Board type:&lt;/label>
+            &lt;select id="boards" onchange="myFunction()">
+                &lt;option value="HP">High Performance (HP)&lt;/option>
+                &lt;option value="FHP">Friendly High Performance (FH)&lt;/option>
+                &lt;option value="AR">All rounder (AR)&lt;/option>
+                &lt;option value="SW">Small wave performance (SW)&lt;/option>
+                &lt;option value="FI">Fish/Grovel (FI)&lt;/option>
+            &lt;/select>
+        &lt;/div>
+        &lt;div>
+            &lt;!-- field two: length measurement -->
+            &lt;label for="id_length">Length:&lt;/label>
+            &lt;input id="len" type="text" maxlength="6"/>
+        &lt;/div>
+    &lt;/p>
+    &lt;p>
+        &lt;div>
+        &lt;!-- field three: width measurement -->
+        &lt;label for="id_width">Width:&lt;/label>
+        &lt;input id="wid" type="text" maxlength="6"/>
+        &lt;/div>
+    &lt;/p>
+    &lt;p>
+        &lt;div>
+        &lt;!-- field four: thickness measurement -->
+        &lt;label for="id_thickness">Thickness:&lt;/label>
+        &lt;input id="thick" type="text" maxlength="5"/>
+        &lt;/div>
+    &lt;/p>
+&lt;/form>
+
+&lt;!-- Label -->
+&lt;p>Click "Calculate" to display board volume &lt;/p>
+&lt;!-- Call JavaScript function - shown below -->
+&lt;button onclick="myFunction()">Calculate&lt;/button>
+
+&lt;!-- shows the result of JavaScript function -->
+&lt;p id="demo">&lt;/p>
+
+&lt;!-- shows last calculation only after second function call -->
+&lt;h4 id="last_calc" style="color: #3366CC">&lt;/h4>
+&lt;p id="myLastCalculation" style="color: #3366CC">&lt;/p>
+
+                                    </code>
+                                </pre>
+
+                                <h4>JavaScript</h4>
+                                <pre class="language-javascript">
+                                    <code class="language-javascript" style="white-space:pre-wrap">
+// USED TO EVALUATE WIDTH AND THICKNESS MEASUREMENTS
+// e.g. form dom_object = document.getElementById("frm1");
+// e.g. string_id = thick ---> &lt;input id="thick" type="text"/>
+function parse_strings(y){
+    // if the dom object looks like 6 1/2
+    // convert 6 1/2 to 6.5 (The regression model used datatype=float)
+    if(y.length > 1){
+        // split the second variable on the forward slash
+        var z = y[1].split('/');
+        // divide fraction and add values together
+        var v = (parseInt(y[0]) + (parseInt(z[0]) / parseInt(z[1])));
+        return v
+    }
+    else{
+        // In the very unlikely scenario someone makes a board with a thickness
+        // less than 1 inch - parse the fraction through division operator.
+        // WARNING: the regression model did not use thickness measurements
+        // less than ~2 inches so the calculated volume will be unreliable if you
+        // choose to enter nothing but a fraction.
+        var z = y[0].split('/');
+        // parsed dom_object is a fraction like 1/2
+        if(z.length > 1){
+            var v = (parseInt(z[0]) / parseInt(z[1]));
+            return v
+        }
+        // parsed dom object is just an integer like 6
+        else{
+            var v = (parseInt(y[0]));
+            return v
+        }
+    }
+}
+
+// PARSE LENGTH MEASUREMENTS
+function parse_length(y){
+    if(y.length > 1){
+        var v = (parseInt(y[0]) + (parseInt(y[1]) / 12));
+        return v
+    }
+    else{
+        var v = (parseInt(y[0]));
+        return v
+    }
+}
+
+// create empty array to hold calculations
+// cleared on page reload
+var myArray = []
+
+function myFunction() {
+    // get the dom form object called "frm1"
+    var x = document.getElementById("frm1");
+
+    // Extract the values for each measurement
+    // Also split each string on white space
+    // Note the input id is used (e.g. x.len. )
+    var l = x.len.value.split(" ");
+    var w = x.wid.value.split(" ");
+    var t = x.thick.value.split(" ");
+
+    // parse the form input boxes
+    var len = parse_length(l)
+    var wid = parse_strings(w)
+    var thick = parse_strings(t)
+
+    // check if length width and thickness fall inside
+    // appropriate dimensions
+
+    // based on board selection alter an image displayed on the webpage
+    // note that I am also altering the coefficient associated with boardtype.
+    // this coefficient is used in the regression model in a following step.
+    if(x.boards.value == "AR"){
+        var boardtype = 0.0
+        $('img#surfboardImage').attr("src","../img/allrounder.png")
+    }
+    else if (x.boards.value == "HP") {
+        var boardtype = -2.155433
+        $('img#surfboardImage').attr("src","../img/Highperformance.png")
+    }
+    else if (x.boards.value == "FHP") {
+        var boardtype = -1.275470
+        $('img#surfboardImage').attr("src","../img/Friendly high performance.png")
+    }
+    else if (x.boards.value == "SW") {
+        var boardtype = -0.675191
+        $('img#surfboardImage').attr("src","../img/Smallwave.png")
+    }
+    else if (x.boards.value == "FI") {
+        var boardtype = 1.014127
+        $('img#surfboardImage').attr("src","../img/grovelfish.png")
+    }
+
+    // calculate volume
+    var volume = -75.197048 + boardtype + 6.390996 * len
+                + 2.605445 * wid
+                + 7.154882 * thick
+    // round volume to three decimal places
+    var volume = volume.toFixed(3)
+
+    // return the volume to the html tag "demo"
+    if(x.len.value != "" && x.wid.value != "" && x.thick.value != ""){
+        document.getElementById("demo").innerHTML = volume + ' litres';
+
+        // save each search to an array (gets wiped on page reload)
+        myArray.push(x.boards.value + '; length: ' + x.len.value + '; width: ' +
+                    x.wid.value + '; thickness: ' + x.thick.value + ' = ' + volume)
+        myArrayLength = myArray.length - 1
+
+        // on the second request show the last calculation
+        if(myArrayLength >= 1){
+            document.getElementById("last_calc").innerHTML = "Your last calculation: "
+            document.getElementById("myLastCalculation").innerHTML = myArray[myArrayLength-1]
+        }
+    }
+    else{
+        document.getElementById("demo").innerHTML = "";
+    }
+}
+
+                                    </code>
+                                </pre>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -287,5 +358,6 @@
             $('.modal:visible').each(centerModal);
         });
     </script>
+    <script src="../js/prism.js"></script>
     </body>
 </html>

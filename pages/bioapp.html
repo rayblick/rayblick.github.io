@@ -10,16 +10,8 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu|Oswald' rel='stylesheet' type='text/css'>
     <script src="js/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="../css/prism.css" />
-    <script>
-        function changeImage() {
-            var image = document.getElementById('myImage');
-            if (image.src.match("asciileaf")) {
-                image.src = "../img/hexleaf_crop.png";
-            } else {
-                image.src = "../img/asciileaf_crop.png";
-            }
-        }
-    </script>
+    <!--My JavaScript Scripts -->
+    <script src="../js/hexleaf.js"></script>
     </head>
     <body>
         <div class='container'>
@@ -33,10 +25,10 @@
                     </div>
                     <hr class='sectionbreak'>
                     <div class="sidebar-documentation">
+                        <a href="../index.html"><strong>Home</strong></a><br>
                         <strong>Projects</strong>
                         <br>
                         <div class="sidebar-list-indent">
-                            <li><a href="../index.html">Home</a></li>
                             <li><a href="healthapp.html">Health App (R)</a></li>
                             <li><a href="bioapp.html">Bio Video App (R)</a></li>
                             <li><a href="samplinggame.html">Sampling Game (Python)</a></li>
@@ -54,13 +46,16 @@
                     <div class="documentation-wrapper">
                         <div class="documentation-container">
                             <div class="documentation-content">
-                                <!-- image -->
-                                Quick search course related content
-                                This is a screen shot from the
-                                live/reactive application deployed with
-                                shiny apps io.
-                                <a href=http://rblick.shinyapps.io/bioApp/ target=_blank>
-                                go to the live shiny site</a>
+                                <h4>Web interface for online videos matching
+                                    course content</h4>
+                                This app was designed to provide a web interface
+                                for accessing course related videos that match the
+                                labratory exercises in BIOS1101 (UNSW).The image
+                                is a screen shot from the live/reactive application
+                                deployed with shiny apps. <br><br>
+
+                                <a href=http://rblick.shinyapps.io/bioApp/ target=_blank style="color: blue!important;">
+                                   <h4>Go to live shiny app</h4></a>
                                 <div id="image_container">
                                     <div id="bioapp_image"></div>
                                 </div>
