@@ -106,6 +106,12 @@ hr.sectionbreak {
     float:left;
     width: 50%;
 }
+#image_container{
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+
 button#boardbutton{
     width: 260px;
     display: block;
@@ -140,10 +146,20 @@ button#boardbutton{
     background-image: url("../img/wavedirection_secondary_20160605 0811.png");
     float: left;
 }
-#image_container{
-    margin-top: 3%;
-    margin-bottom: 5%;
+#myImage{
+    display: inline-flex;
+    margin: 0px;
+    width: 100%;
+    height: auto;
 }
+
+#health_image, #ve_image, #samplinggame_image, #bioapp_image, #primary_swell_image,
+#secondary_swell_image{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 #surfmap_image_container{
     height: auto;
     width: 100%;
@@ -151,15 +167,38 @@ button#boardbutton{
     margin-bottom: 5%;
     display: inline-block;
 }
-#myImage{
-    display: inline-flex;
-    width: 100%;
+
+.image-container{
+    float:left;
+    width: 45%;
+    min-width: 350px;
     height: auto;
-    margin: 0px;
+    min-height:270px;
+    margin: 2.5%;  
+    /*background: #e0e0d1;*/   
 }
-#health_image, #ve_image, #samplinggame_image, #bioapp_image, #primary_swell_image,
-#secondary_swell_image{
+
+.image-container1,.image-container2,.image-container3,.image-container4{
+    width: 100%;
+    min-width: 350px;
+    height:100%;
+    min-height:270px;
     background-repeat: no-repeat;
-    background-position: center;
     background-size: contain;
+    background-position: center;
 }
+
+.image-container1{
+    background-image: url('../img/python.png');
+}
+.image-container2{
+    background-image: url('../img/raspberrypi.png');
+}
+.image-container3{
+    background-image: url('../img/java.png');
+}
+.image-container4{
+    background-image: url('../img/android.png');
+}
+
+
