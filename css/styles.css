@@ -174,13 +174,13 @@ button#boardbutton{
     min-width: 350px;
     height: auto;
     min-height:270px;
-    margin: 2.5%;  
-    /*background: #e0e0d1;*/   
+    /*margin: 2.5%;  
+    background: #e0e0d1;*/   
 }
 
 .image-container1,.image-container2,.image-container3,.image-container4{
     width: 100%;
-    min-width: 350px;
+    min-width: 300px;
     height:100%;
     min-height:270px;
     background-repeat: no-repeat;
