@@ -4,7 +4,9 @@
     <meta charset="utf-8" />
     <meta lang="en" />
     <title>Ray Blick</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/indexStyles.css" />
+    <link rel="stylesheet" type="text/css" href="css/themes.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Ubuntu|Oswald' rel='stylesheet' type='text/css'>
@@ -17,63 +19,87 @@
     <script src="prism.js"></script>
         <div class='container'>
             <div class='main-wrapper'>
-                <div class="sidebar">
-                    <div class="sidebar-logo">
-                        <img id="myImage" onclick="changeImage()" src="img/hexleaf_crop.png">
-                    </div>
-                    <div class="sidebar-title">
-                        Ray Blick
-                    </div>
-                    <hr class='sectionbreak'>
-                    <div class="sidebar-documentation">
-                        <a href="index.html"><strong>Home</strong></a><br><br>
-                        <strong>Projects</strong>
-                        <div class="sidebar-list-indent">
-                            <li><a href="pages/healthapp.html">Health App (R)</a></li>
-                            <li><a href="pages/bioapp.html">Bio Video App (R)</a></li>
-                            <li><a href="pages/samplinggame.html">Sampling Game (Python)</a></li>
-                            <li><a href="pages/boardvolume.html">Surfboard Volume (JavaScript)</a></li>
-                            <li><a href="pages/surfmaps.html">Surf maps (Python)</a></li>
-                            <li><a href="pages/virtualecologist.html">Virtual Ecologist (Python)</a></li>
-                            <li><a href="">Links</a></li>
-                        </div>
-                    </div>
-                </div>
+
                 <div class='title-container'>
                     <div class='title-content'>
-                        <h1>Ray Blick's web dev page of assorted projects</h1><br>
-                        This is my development site for trying out HTML, CSS and
-                        JavaScript. The programming languages I use
-                        include Python, R, and Java. Project content will change
-                        over time, but will focus on topics such as the
-                        Raspberry Pi, Dashboards and Visualisations, Android apps
-                        and Games.Most projects will be directed to a home page
-                        hosted on github.
+                        <h2>Ray Blick's development webpage</h2><br>
+                        This is my development site for testing HTML, CSS and
+                        JavaScript. I also use this space to highlight my personal
+                        projects.
                     </div>
-                </div>
+                  </div>
+
                 <div class='maincontent-wrapper'>
                     <hr class='sectionbreak'>
                     <div class="documentation-wrapper">
                         <div class="documentation-container">
                             <div class="documentation-content">
-                                <div>
-                                    <div class="image-container">
-                                        <div class="image-container1">
-                                        </div>
-                                    </div>
-                                    <div class="image-container">
-                                        <div class="image-container2">
-                                        </div>
-                                    </div>
-                                    <div class="image-container">
-                                        <div class="image-container3">
-                                        </div>
-                                    </div>
-                                    <div class="image-container">
-                                        <div class="image-container4">
-                                        </div>
-                                    </div>
+
+
+                              <a href="pages/healthapp.html">
+                                <div class="image-container" id="healthapp">
+                                  <i class="fa fa-medkit" aria-hidden="true" style="font-size:60px;"></i>
+                                  <h5 id="healthapp">Health App <br>(R shiny)</h5>
                                 </div>
+                              </a>
+
+
+                              <a href="pages/bioapp.html">
+                                <div class="image-container" id="bioapp">
+                                  <i class="fa fa-leaf" aria-hidden="true" style="font-size:60px;"></i>
+                                  <h5 id="bioapp">Biology App <br>(R shiny)</h5>
+                                </div>
+                              </a>
+
+
+                              <a href="pages/samplinggame.html">
+                                <div class="image-container" id="samplinggame">
+                                  <i class="fa fa-gamepad" aria-hidden="true" style="font-size:60px;"></i>
+                                  <h5 id="samplinggame">Sampling game <br>(Python)</h5>
+                                </div>
+                              </a>
+
+
+                              <a href="pages/boardvolume.html">
+                                <div class="image-container" id="boardvolume">
+                                  <i class="fa fa-calculator" aria-hidden="true" style="font-size:60px;"></i>
+                                  <h5 id="boardvolume">Surfboard calc <br>(Javascript)</h5>
+                                </div>
+                              </a>
+
+
+                              <a href="pages/surfmaps.html">
+                                <div class="image-container" id="surfmaps">
+                                  <i class="fa fa-map-o" aria-hidden="true" style="font-size:60px;"></i>
+                                  <h5 id="surfmaps">Surf maps <br>(Python)</h5>
+                                </div>
+                              </a>
+
+
+                              <a href="pages/virtualecologist.html">
+                                <div class="image-container" id="virtualecologist">
+                                  <i class="fa fa-tree" aria-hidden="true" style="font-size:60px;"></i>
+                                  <h5 id="virtualecologist">Virtual ecologist <br>(Python)</h5>
+                                </div>
+                              </a>
+
+
+                              <a href="https://rayblick.github.io/CitationManager/index">
+                                <div class="image-container" id="citationmanager">
+                                  <i class="fa fa-book" aria-hidden="true" style="font-size:60px;"></i>
+                                  <h5 id="citationmanager">Citation manager<br>(Python)</h5>
+                                </div>
+                              </a>
+
+
+                              <a href="https://rayblick.github.io/biocornerapps/">
+                                <div class="image-container" id="biocornerapps">
+                                  <i class="fa fa-rocket" aria-hidden="true" style="font-size:60px;"></i>
+                                  <h5 id="biocornerapps">Biocornerapps (Android)</h5>
+                                </div>
+                              </a>
+
+
                             </div>
                         </div>
                     </div>

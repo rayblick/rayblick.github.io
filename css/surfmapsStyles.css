@@ -1,0 +1,20 @@
+#surfmap_image_container{
+    height: auto;
+    width: 100%;
+    display: inline-block;
+}
+#primary_swell_image, #secondary_swell_image{
+    height: 300px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#primary_swell_image{
+    background-image: url("../img/wavedirection_primary_20160605 0811.png");
+    float: left;
+}
+#secondary_swell_image{
+    background-image: url("../img/wavedirection_secondary_20160605 0811.png");
+    float: left;
+}
