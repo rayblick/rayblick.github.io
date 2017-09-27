@@ -41,7 +41,8 @@ hr.sectionbreak {
     width: 100%;
 }
 .documentation-content{
-    margin-bottom: 2%;
+    margin: auto 1em 1em;
+    /*margin-bottom: 2%;*/
     width: 100%;
     display: inline-block;
     justify-content: center;
