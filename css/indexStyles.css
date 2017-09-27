@@ -34,13 +34,9 @@ hr.sectionbreak {
 
 .documentation-wrapper{
     display: flex;
-    margin-left:2%;
-    margin-right: 2%;
     height: auto;
 }
 .documentation-container{
-    margin-left: 4%;
-    margin-right: 4%;
     height: auto;
     width: 100%;
 }
