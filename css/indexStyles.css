@@ -41,22 +41,23 @@ hr.sectionbreak {
     width: 100%;
 }
 .documentation-content{
-    margin: auto 1em 1em;
+    margin: auto;
     /*margin-bottom: 2%;*/
     width: 100%;
-    display: inline-block;
+    /*display: inline-block;*/
     justify-content: center;
+    text-align: center;
 }
 
 .image-container{
-    float: left;
+    /*float: left;*/
+    display: inline-block;
     width: 120px;
     height: 120px;
     background: #e0e0d1;
     margin: 5px;
     padding-top: 5px;
-    align-content: center;
-    text-align: center;
+    /*align-content: center;*/
 }
 
 #applogo{
