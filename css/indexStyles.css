@@ -16,6 +16,10 @@ hr.sectionbreak {
     /*padding-left: 15%!important;
     padding-right: 15%!important;*/
 }
+.main-wrapper{
+  max-width: 500px;
+  margin: auto;
+}
 
 .title-container{
     width: 100%;
