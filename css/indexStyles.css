@@ -67,3 +67,15 @@ hr.sectionbreak {
 #applogo{
   font-size:60px
 }
+
+.bio-wrapper{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: auto;
+  width: 100%;
+
+}
+.bio-container{
+  padding-left: 2%;
+  padding-right: 2%;
+}
