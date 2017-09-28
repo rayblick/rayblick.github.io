@@ -33,13 +33,14 @@ hr.sectionbreak {
 }
 
 #bio{
-    text-align: center;  
+    text-align: center;
 }
 
 #subtext{
   font-size: 1.5em;
   font-family: Courier;
 }
+
 
 .maincontent-wrapper{
     /*height: auto;*/
@@ -86,10 +87,21 @@ hr.sectionbreak {
   margin-bottom: 50px;
   height: auto;
   width: 100%;
-
-}
-.bio-container, .info-container{
   text-align: center;
   padding-left: 2%;
   padding-right: 2%;
+}
+.biocornerapps-wrapper{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: auto;
+  width: 100%;
+}
+
+.biocornerapps-container{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+#biocornerapps-title{
+  text-align: center;
 }
