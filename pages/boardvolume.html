@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta lang="en" />
+    <meta name="viewport" content="width=device-width">
     <title>Ray Blick</title>
     <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/indexStyles.css" />
     <link rel="stylesheet" type="text/css" href="../css/themes.css" />
     <link rel="stylesheet" type="text/css" href="../css/boardvolumeStyles.css" />
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
@@ -22,79 +22,72 @@
             <div class='main-wrapper'>
 
                 <div class='title-container'>
-                    <h1>Calculate surfboard volume</h1>
-                    Secondary objective: use JavaScript for form calculations<br>
-                    Tertiary objective: use modals<br>
+                    <h2>Calculate surfboard volume</h2>
                 </div>
                 <div class='maincontent-wrapper'>
                     <hr class='sectionbreak'>
-                    <div class="documentation-wrapper">
-                        <div class="documentation-container">
-                            <div class="documentation-content">
-                                <h4>Surfboard volume</h4>
-                                <br>
-                                <div class="documentation-content-left-50">
-                                    <form id="frm1" method="post">
-                                        <p>
-                                            <div>
-                                                <label>Board type:</label>
-                                                <!--<input id="boardtype" list="boards">-->
-                                                <select id="boards" onchange="myFunction()">
-                                                    <option value="HP">High Performance (HP)</option>
-                                                    <option value="FHP">Friendly High Performance (FH)</option>
-                                                    <option value="AR">All rounder (AR)</option>
-                                                    <option value="SW">Small wave performance (SW)</option>
-                                                    <option value="FI">Fish/Grovel (FI)</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <label for="id_length">Length:</label>
-                                                <input id="len" type="text" maxlength="100"/>
-                                            </div>
-                                        </p>
-                                        <p>
-                                            <div>
-                                            <label for="id_width">Width:</label>
-                                            <input id="wid" type="text" maxlength="100"/>
-                                            </div>
-                                        </p>
-                                        <p>
-                                            <div>
-                                            <label for="id_thickness">Thickness:</label>
-                                            <input id="thick" type="text" maxlength="100"/>
-                                            </div>
-                                        </p>
-                                    </form>
 
-                                    <p>Click "Calculate" to display board volume </p>
-                                    <button onclick="myFunction()">Calculate</button>
-                                    <p id="demo"></p>
-                                    <h4 id="last_calc" style="color: #3366CC"></h4>
-                                    <p id="myLastCalculation" style="color: #3366CC"></p>
-                                </div>
+                    <div class="calculator">
+                        <div class="calculator-form-content">
+                            <form id="frm1" method="post">
+                                  <p>
+                                      <div class="formfield">
+                                          <label>Board type:</label>
+                                          <!--<input id="boardtype" list="boards">-->
+                                          <select class="formfield" id="boards" onchange="myFunction()">
+                                              <option value="HP">High Performance (HP)</option>
+                                              <option value="FHP">Friendly High Performance (FH)</option>
+                                              <option value="AR">All rounder (AR)</option>
+                                              <option value="SW">Small wave performance (SW)</option>
+                                              <option value="FI">Fish/Grovel (FI)</option>
+                                          </select>
+                                      </div>
+                                      <div class="formfield">
+                                          <label for="id_length">Length (e.g. 6' 8"):</label>
+                                          <input id="len" type="text" maxlength="50"/>
+                                      </div>
+                                  </p>
+                                  <p>
+                                      <div class="formfield">
+                                      <label for="id_width">Width (e.g. 19" 1/4):</label>
+                                      <input id="wid" type="text" maxlength="50"/>
+                                      </div>
+                                  </p>
+                                  <p>
+                                      <div class="formfield">
+                                      <label for="id_thickness">Thickness (2" 3/4):</label>
+                                      <input id="thick" type="text" maxlength="50"/>
+                                      </div>
+                                  </p>
+                              </form>
+                              <div class="formfield">
+                                <p>Click "Calculate" to display board volume </p>
+                                <button onclick="myFunction()">Calculate</button>
+                                <p id="demo"></p>
+                                <h4 id="last_calc" style="color: #3366CC"></h4>
+                                <p id="myLastCalculation" style="color: #3366CC"></p>
+                              </div>
+                          </div>
+                      </div>
 
-                                <div class="documentation-content-right-50">
-                                    <img id="surfboardImage" src="../img/Highperformance.png" style="height:300px;">
-                                </div>
-                            </div>
+
+
                                 <hr class='sectionbreak'>
 
                                 <div class="documentation-content">
                                     <h4>Tests</h4>
                                         <p>
-                                            Formula created using multiple regression. Board type
-                                            is coded as a dummy variable. Calculations based on 285 shapes of
-                                            33 distinct boards from 7 manufacturers.
+                                            I used multiple regression to calculate the model coefficients necessary to calculate volume from length, width and thickness. I used board type as a dummy variable. Multiple regression was carried out using 285 surfboards from 33 distinct designs and 7 manufacturers.
                                         </p>
                                         <!-- Trigger the modal with a button -->
                                         <div>
-                                            <button id="boardbutton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Dissimilarity between boards</button>
                                             <button id="boardbutton"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Dissimilarity in board type</button>
                                             <button id="boardbutton"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Distribution of board measurements</button>
                                             <a href='../data/board_data' download='data.csv'><button id="boardbutton"  type="button" class="btn btn-primary">Download Board Data (19.1 kB)</button></a>
                                         </div>
                                         <br><br>
                                         <div class='boardvolume-testresults'>
+
                                             <h4>Results</h4>
                                             <p style="font-size: 15px">
                                                 1) Super Fling: Superbrand (Fish)
