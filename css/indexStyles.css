@@ -32,7 +32,7 @@ hr.sectionbreak {
     padding-right: 5%;*/
 }
 
-#bio{
+#sectiontitle{
     text-align: center;
 }
 
@@ -82,7 +82,7 @@ hr.sectionbreak {
   font-size:60px
 }
 
-.bio-wrapper, .info-wrapper{
+.section-wrapper{
   margin-top: 50px;
   margin-bottom: 50px;
   height: auto;
