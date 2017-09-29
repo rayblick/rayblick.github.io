@@ -109,6 +109,10 @@ hr.sectionbreak {
 }
 .biocornerapps-tweet{
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
   text-align: center
+}
+
+.twitter-tweet{
+  display: inline-flex!important;
 }
